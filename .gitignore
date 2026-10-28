@@ -1,0 +1,9 @@
+.DS_Store
+
+# Xcode
+DerivedData/
+xcuserdata/
+*.xcuserstate
+
+# Tooling local
+.claude/

@@ -1,0 +1,5 @@
+.build/
+.swiftpm/
+*.sqlite
+Public/videos/*
+!Public/videos/.gitkeep
