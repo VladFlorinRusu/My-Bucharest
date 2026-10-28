@@ -56,6 +56,34 @@ struct Story: Codable, Identifiable, Hashable {
     let personalities: [String]
     let video: StoryVideo?
     let source: StorySource?
+    // Opționale ca poveștile salvate local înainte de aceste câmpuri să se decodeze în continuare.
+    var audioURL: String? = nil
+    var aiVoice: Bool? = nil
+    var credits: [MediaCredit]? = nil
+    var kind: StoryKind? = nil
+}
+
+enum StoryKind: String, Codable, CaseIterable, Hashable {
+    case history
+    case curiosity
+    case gossip
+    case etymology
+    case food
+    case legend
+    case person
+
+    init(from decoder: any Decoder) throws {
+        let raw = try decoder.singleValueContainer().decode(String.self)
+        self = StoryKind(rawValue: raw) ?? .history
+    }
+}
+
+struct MediaCredit: Codable, Hashable {
+    let title: String
+    let author: String
+    let license: String
+    let licenseURL: String?
+    let sourceURL: String
 }
 
 /// O poveste împreună cu locul ei – unitatea afișată în feed-urile de reels.

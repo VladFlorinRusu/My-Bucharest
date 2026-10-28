@@ -12,6 +12,7 @@ struct SeedBucharestPlaces: AsyncMigration {
         let storyTitle: String
         let storyBody: String
         let personalities: [String]
+        var storyKind: StoryKind = .history
     }
 
     private let seeds: [Seed] = [
@@ -23,7 +24,8 @@ struct SeedBucharestPlaces: AsyncMigration {
             summary: "Sala de concerte simbol a Bucureștiului, inaugurată în 1888.",
             storyTitle: "„Dați un leu pentru Ateneu!”",
             storyBody: "Construcția a fost finanțată în mare parte printr-o subscripție publică: bucureștenii erau îndemnați să doneze câte un leu. Clădirea a fost proiectată de arhitectul francez Albert Galleron, iar în interior se află o frescă de circa 75 de metri care ilustrează istoria românilor.",
-            personalities: ["Albert Galleron", "Costin Petrescu"]
+            personalities: ["Albert Galleron", "Costin Petrescu"],
+            storyKind: .curiosity
         ),
         Seed(
             name: "Palatul Parlamentului",
@@ -106,6 +108,7 @@ struct SeedBucharestPlaces: AsyncMigration {
                 position: 0,
                 personalities: seed.personalities
             )
+            story.kind = seed.storyKind
             try await story.save(on: database)
         }
     }

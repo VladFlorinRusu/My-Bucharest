@@ -1,0 +1,2350 @@
+{
+  "facts" : [
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 75,
+      "importance" : 3,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Biserica Curtea Veche",
+        "Biserica Bucur"
+      ],
+      "startSeconds" : 37,
+      "statement" : "Biserica Curtea Veche este cea mai veche biserică din București; legenda că Biserica Bucur Ciobanul ar fi mai veche este falsă.",
+      "topics" : [
+        "religie",
+        "legende"
+      ]
+    },
+    {
+      "dates" : [
+        "1560",
+        "1931"
+      ],
+      "endSeconds" : 95,
+      "importance" : 3,
+      "kind" : "event",
+      "people" : [
+        "Mircea Ciobanul"
+      ],
+      "places" : [
+        "Biserica Curtea Veche"
+      ],
+      "startSeconds" : 56,
+      "statement" : "Forma inițială a Bisericii Curtea Veche datează din vremea domnitorului Mircea Ciobanul (în jurul anului 1560); în 1931 Comisia Monumentelor Istorice a refăcut-o aproape identic, pe baza săpăturilor arheologice.",
+      "topics" : [
+        "religie",
+        "arhitectură"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XVI"
+      ],
+      "endSeconds" : 111,
+      "importance" : 2,
+      "kind" : "anecdote",
+      "people" : [
+        "Mircea Ciobanul",
+        "Doamna Chiajna",
+        "Alexandru Odobescu"
+      ],
+      "places" : [
+
+      ],
+      "startSeconds" : 76,
+      "statement" : "Mircea Ciobanul și-a primit porecla pentru că făcuse avere din negoțul cu oi la Constantinopol; soția lui, Doamna Chiajna, a fost popularizată în literatură de Alexandru Odobescu.",
+      "topics" : [
+        "personalități",
+        "literatură"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XIX",
+        "secolul XX"
+      ],
+      "endSeconds" : 131,
+      "importance" : 1,
+      "kind" : "event",
+      "people" : [
+
+      ],
+      "places" : [
+        "Biserica Curtea Veche"
+      ],
+      "startSeconds" : 112,
+      "statement" : "În secolul al XIX-lea Biserica Curtea Veche a fost refăcută fără respect pentru aspectul inițial, apropiată de stilul neogotic, și abia în secolul XX a fost readusă la forma originală.",
+      "topics" : [
+        "arhitectură",
+        "religie"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XVI"
+      ],
+      "endSeconds" : 160,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Biserica Curtea Veche"
+      ],
+      "startSeconds" : 132,
+      "statement" : "Decorul exterior al Bisericii Curtea Veche, cu alternanță de tencuială și cărămidă și ocnițe mici de cărămidă, este specific secolului al XVI-lea și mai apare doar la o biserică din județul Vâlcea, cu circa 20 de ani mai veche.",
+      "topics" : [
+        "arhitectură"
+      ]
+    },
+    {
+      "dates" : [
+        "1847"
+      ],
+      "endSeconds" : 207,
+      "importance" : 2,
+      "kind" : "event",
+      "people" : [
+
+      ],
+      "places" : [
+        "Biserica Curtea Veche",
+        "Biserica Sfântul Anton"
+      ],
+      "startSeconds" : 151,
+      "statement" : "Hramul original al Bisericii Curtea Veche este Buna Vestire; hramul Sfântul Anton l-a preluat după incendiul din 1847, de la biserica Sfântul Anton „a pușcăriei”, care a ars și nu a mai fost refăcută.",
+      "topics" : [
+        "religie"
+      ]
+    },
+    {
+      "dates" : [
+        "1459"
+      ],
+      "endSeconds" : 225,
+      "importance" : 3,
+      "kind" : "event",
+      "people" : [
+        "Vlad Țepeș"
+      ],
+      "places" : [
+        "Curtea Veche"
+      ],
+      "startSeconds" : 189,
+      "statement" : "În zona Curții Vechi se presupune că a fost cetatea ridicată de Vlad Țepeș, de unde provine primul document care menționează numele Bucureștiului, datat 20 septembrie 1459.",
+      "topics" : [
+        "istorie politică"
+      ]
+    },
+    {
+      "dates" : [
+        "1880"
+      ],
+      "endSeconds" : 244,
+      "importance" : 3,
+      "kind" : "event",
+      "people" : [
+
+      ],
+      "places" : [
+        "Râul Dâmbovița",
+        "Hanul lui Manuc",
+        "Piața Unirii"
+      ],
+      "startSeconds" : 207,
+      "statement" : "Dâmbovița curgea odinioară prin dreptul Hanului lui Manuc, mai sus decât astăzi; în jurul anului 1880 cursul a fost regularizat și acoperit, iar pe vechea albie a apărut actuala Piață a Unirii.",
+      "topics" : [
+        "urbanism"
+      ]
+    },
+    {
+      "dates" : [
+        "1660"
+      ],
+      "endSeconds" : 282,
+      "importance" : 3,
+      "kind" : "event",
+      "people" : [
+        "Grigore Ghica"
+      ],
+      "places" : [
+        "București",
+        "Târgoviște",
+        "Giurgiu"
+      ],
+      "startSeconds" : 244,
+      "statement" : "Capitala Țării Românești s-a mutat definitiv de la Târgoviște la București în 1660, pentru că turcii voiau domnia mai aproape de raiaua Giurgiu (la circa două ore de București) și pentru că Bucureștiul avea o poziție comercială mult mai bună.",
+      "topics" : [
+        "istorie politică",
+        "comerț"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 300,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Centrul Vechi"
+      ],
+      "startSeconds" : 283,
+      "statement" : "Multe străzi din Centrul Vechi poartă numele breslelor de meșteșugari care dominau pe ele, pentru că zona s-a format în jurul comerțului.",
+      "topics" : [
+        "comerț",
+        "urbanism"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 318,
+      "importance" : 3,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Strada Lipscani"
+      ],
+      "startSeconds" : 301,
+      "statement" : "Strada Lipscani, axul central al Centrului Vechi, își trage numele de la negustorii (mulți sași) care aduceau mărfuri de la Leipzig, numit în vechime Lipsca.",
+      "topics" : [
+        "comerț"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 356,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Hanul lui Manuc"
+      ],
+      "startSeconds" : 319,
+      "statement" : "Hanul lui Manuc este printre cele mai vechi construcții civile păstrate în Centrul Vechi și ultimul han construit după modelul vechi.",
+      "topics" : [
+        "arhitectură"
+      ]
+    },
+    {
+      "dates" : [
+        "1600"
+      ],
+      "endSeconds" : 375,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Centrul Vechi"
+      ],
+      "startSeconds" : 338,
+      "statement" : "De pe la 1600 încep să se construiască hanuri în zonă; modelul era un patrulater închis, fără ferestre spre exterior, care la închiderea porților se transforma în fortăreață.",
+      "topics" : [
+        "arhitectură",
+        "comerț"
+      ]
+    },
+    {
+      "dates" : [
+        "1800"
+      ],
+      "endSeconds" : 414,
+      "importance" : 2,
+      "kind" : "event",
+      "people" : [
+        "Manuc Bei"
+      ],
+      "places" : [
+        "Hanul lui Manuc",
+        "Curtea Domnească",
+        "Curtea Arsă"
+      ],
+      "startSeconds" : 376,
+      "statement" : "Manuc Bei a cumpărat la începutul anilor 1800 o parte din terenul fostei Curți Domnești, parcelat după mutarea domniei la Curtea Nouă (Curtea Arsă), și a ridicat acolo hanul.",
+      "topics" : [
+        "comerț",
+        "urbanism"
+      ]
+    },
+    {
+      "dates" : [
+        "1812"
+      ],
+      "endSeconds" : 432,
+      "importance" : 3,
+      "kind" : "event",
+      "people" : [
+
+      ],
+      "places" : [
+        "Hanul lui Manuc"
+      ],
+      "startSeconds" : 395,
+      "statement" : "În 1812 s-a semnat la Hanul lui Manuc Pacea de la București, prin care Imperiul Otoman a cedat Rusiei teritoriul dintre Prut și Nistru (Basarabia).",
+      "topics" : [
+        "istorie politică",
+        "războaie"
+      ]
+    },
+    {
+      "dates" : [
+        "1968"
+      ],
+      "endSeconds" : 450,
+      "importance" : 2,
+      "kind" : "event",
+      "people" : [
+
+      ],
+      "places" : [
+        "Hanul lui Manuc"
+      ],
+      "startSeconds" : 415,
+      "statement" : "Hanul lui Manuc a fost cunoscut o vreme ca Hotel Dacia și a găzduit numeroase evenimente politice; a fost refăcut în 1968 după aspectul vechi și reintrodus în circuitul turistic.",
+      "topics" : [
+        "arhitectură",
+        "comunism"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XIX"
+      ],
+      "endSeconds" : 507,
+      "importance" : 2,
+      "kind" : "anecdote",
+      "people" : [
+
+      ],
+      "places" : [
+        "Strada Halelor"
+      ],
+      "startSeconds" : 472,
+      "statement" : "Pe Strada Halelor, la începutul secolului al XIX-lea, măcelarii își aveau tarabele; boierii fanarioți s-au plâns de miros, dar în loc să fie desființat, comerțul a fost organizat în hale ridicate de arhitecți.",
+      "topics" : [
+        "comerț",
+        "viață cotidiană"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XX",
+        "1980"
+      ],
+      "endSeconds" : 527,
+      "importance" : 2,
+      "kind" : "event",
+      "people" : [
+
+      ],
+      "places" : [
+        "Hala Mare",
+        "Strada Halelor"
+      ],
+      "startSeconds" : 489,
+      "statement" : "Halele de pește și de zarzavaturi au fost demolate la începutul secolului XX din cauza mirosurilor, iar Hala Mare a rezistat până în anii '80, când a fost demolată de regimul comunist.",
+      "topics" : [
+        "comerț",
+        "comunism"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XVII"
+      ],
+      "endSeconds" : 602,
+      "importance" : 3,
+      "kind" : "fact",
+      "people" : [
+        "Constantin Brâncoveanu",
+        "Matei Basarab"
+      ],
+      "places" : [
+        "Curtea Domnească",
+        "Strada Covaci",
+        "Strada Șelari"
+      ],
+      "startSeconds" : 547,
+      "statement" : "Constantin Brâncoveanu a refăcut aproape integral Curtea Domnească, cu un palat mare întins de la biserica Sfântul Anton până spre strada Covaci, lăudat de călătorii străini; pe strada Covaci își ridicase un chioșc de piatră unde lua masa și se odihnea vara.",
+      "topics" : [
+        "arhitectură",
+        "istorie politică"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 622,
+      "importance" : 3,
+      "kind" : "event",
+      "people" : [
+        "Constantin Brâncoveanu"
+      ],
+      "places" : [
+        "Calea Victoriei",
+        "Podul Mogoșoaiei",
+        "Palatul Mogoșoaia"
+      ],
+      "startSeconds" : 585,
+      "statement" : "Brâncoveanu a tăiat Podul Mogoșoaiei, actuala Calea Victoriei, pentru a lega Curtea Domnească de palatul de la Mogoșoaia; drumul a fixat limita vestică a Centrului Vechi.",
+      "topics" : [
+        "urbanism"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XIX"
+      ],
+      "endSeconds" : 640,
+      "importance" : 3,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "București"
+      ],
+      "startSeconds" : 603,
+      "statement" : "Marile străzi ale Bucureștiului se numeau „poduri” pentru că până în secolul al XIX-lea erau pavate cu bârne de lemn, care adesea putrezeau și provocau accidente.",
+      "topics" : [
+        "urbanism",
+        "viață cotidiană"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 694,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Podul Calicilor",
+        "Calea Șerban Vodă",
+        "Râul Dâmbovița"
+      ],
+      "startSeconds" : 641,
+      "statement" : "Peste Dâmbovița, lângă actualul Tribunal, trecea Podul Calicilor; „calic” vine din turcă și înseamnă cerșetor, după cerșetorii care stăteau pe pod. Drumul continua spre sud pe Calea Șerban Vodă, spre Dunăre.",
+      "topics" : [
+        "urbanism",
+        "transport"
+      ]
+    },
+    {
+      "dates" : [
+        "1878"
+      ],
+      "endSeconds" : 732,
+      "importance" : 2,
+      "kind" : "event",
+      "people" : [
+
+      ],
+      "places" : [
+        "Calea Victoriei",
+        "Strada Smârdan"
+      ],
+      "startSeconds" : 695,
+      "statement" : "Numele de Calea Victoriei a fost dat după Războiul de Independență, în cinstea victoriei armatei române; tot atunci Strada Nemțească a devenit Strada Smârdan, după bătăliile din Bulgaria.",
+      "topics" : [
+        "istorie politică",
+        "războaie"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 768,
+      "importance" : 1,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Strada Șelari"
+      ],
+      "startSeconds" : 733,
+      "statement" : "Strada Șelari poartă numele meșterilor care făceau șei și alte piese de harnașament pentru cai.",
+      "topics" : [
+        "comerț"
+      ]
+    },
+    {
+      "dates" : [
+        "1860"
+      ],
+      "endSeconds" : 805,
+      "importance" : 2,
+      "kind" : "event",
+      "people" : [
+
+      ],
+      "places" : [
+        "Hanul Roșu",
+        "Hanul Verde"
+      ],
+      "startSeconds" : 769,
+      "statement" : "Hanul Roșu (pereche cu Hanul Verde) își datora numele unui foișor vopsit în roșu, folosit pentru observarea incendiilor; a fost demolat în 1860, împreună cu multe alte hanuri, astfel că azi Centrul Vechi mai păstrează doar trei-patru hanuri.",
+      "topics" : [
+        "arhitectură",
+        "urbanism"
+      ]
+    },
+    {
+      "dates" : [
+        "epoca fanariotă",
+        "1878"
+      ],
+      "endSeconds" : 916,
+      "importance" : 3,
+      "kind" : "event",
+      "people" : [
+        "Carol I"
+      ],
+      "places" : [
+        "Strada Franceză"
+      ],
+      "startSeconds" : 787,
+      "statement" : "Strada Franceză s-a numit inițial Strada Ișlicarilor (ișlicele erau căciulile mari purtate în epoca fanariotă), apoi Strada Carol I după Războiul de Independență, iar comuniștii au redenumit-o Strada Franceză.",
+      "topics" : [
+        "urbanism",
+        "comunism"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 898,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+        "Alexandru Orăscu"
+      ],
+      "places" : [
+        "Grand Hotel du Boulevard",
+        "Bulevardul Elisabeta",
+        "Calea Victoriei"
+      ],
+      "startSeconds" : 842,
+      "statement" : "În Centrul Vechi s-a făcut trecerea de la han la hotel; cel mai vechi hotel păstrat este probabil Grand Hotel du Boulevard, de la intersecția Bulevardului Elisabeta cu Calea Victoriei, proiectat de Alexandru Orăscu.",
+      "topics" : [
+        "arhitectură",
+        "comerț"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XIX"
+      ],
+      "endSeconds" : 1008,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Centrul Vechi"
+      ],
+      "startSeconds" : 917,
+      "statement" : "Centrul Vechi era supraaglomerat, iar terenul la stradă era scump, așa că negustorii construiau „case cu prăvălie” în adâncime, în formă de L sau U: prăvălia la parter, proprietarii la etajul nobil.",
+      "topics" : [
+        "arhitectură",
+        "viață cotidiană"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XIX"
+      ],
+      "endSeconds" : 1044,
+      "importance" : 2,
+      "kind" : "event",
+      "people" : [
+
+      ],
+      "places" : [
+        "Strada Lipscani"
+      ],
+      "startSeconds" : 1009,
+      "statement" : "Pe Lipscani s-a produs, la mijlocul secolului al XIX-lea, trecerea de la portul de inspirație orientală din epoca fanariotă la moda apuseană adoptată de pașoptiști: pantaloni de stofă, joben, redingotă.",
+      "topics" : [
+        "viață cotidiană"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XVI",
+        "secolul XVII"
+      ],
+      "endSeconds" : 1101,
+      "importance" : 3,
+      "kind" : "anecdote",
+      "people" : [
+
+      ],
+      "places" : [
+        "Biserica Sfântul Dumitru"
+      ],
+      "startSeconds" : 1045,
+      "statement" : "Biserica Sfântul Dumitru, atestată la sfârșitul secolului al XVI-lea, este numită „Biserica de jurământ” pentru că în secolul al XVII-lea martorii la procese veneau aici să jure în fața preotului că vor spune adevărul.",
+      "topics" : [
+        "religie",
+        "legende"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XVII"
+      ],
+      "endSeconds" : 1156,
+      "importance" : 3,
+      "kind" : "event",
+      "people" : [
+        "Badea Bălăceanu",
+        "Constantin Brâncoveanu"
+      ],
+      "places" : [
+        "Muzeul Național de Istorie a României",
+        "Hanul Constantin Vodă",
+        "Zărnești"
+      ],
+      "startSeconds" : 1102,
+      "statement" : "Pe locul unde se află azi Muzeul de Istorie erau casele boierului Badea Bălăceanu; după ce acesta a fugit în Transilvania și a murit luptând împotriva lui Brâncoveanu la Zărnești, Brâncoveanu i-a demolat casele și a ridicat în locul lor Hanul Constantin Vodă.",
+      "topics" : [
+        "istorie politică",
+        "războaie"
+      ]
+    },
+    {
+      "dates" : [
+        "1750",
+        "secolul XIX"
+      ],
+      "endSeconds" : 1196,
+      "importance" : 1,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Biserica Bălăceanu",
+        "Ateneul Român"
+      ],
+      "startSeconds" : 1138,
+      "statement" : "Biserica familiei Bălăceanu a devenit în 1750 metoc al Episcopiei Buzăului, unde trăgeau episcopii când veneau la București; aici se păstrează contractele de restaurare de la începutul secolului al XIX-lea cu zugravii și dulgherii. Metocul Episcopiei Râmnicului era pe locul actualului Ateneu Român.",
+      "topics" : [
+        "religie"
+      ]
+    },
+    {
+      "dates" : [
+        "1802",
+        "1838",
+        "1940",
+        "1977"
+      ],
+      "endSeconds" : 1274,
+      "importance" : 3,
+      "kind" : "event",
+      "people" : [
+
+      ],
+      "places" : [
+        "Centrul Vechi",
+        "Râul Dâmbovița"
+      ],
+      "startSeconds" : 1240,
+      "statement" : "Revărsările Dâmboviței și marile cutremure (1802, 1838, 1940, 1977) au distrus în mod repetat Centrul Vechi; cel din 1802 pare să fi fost cel mai grav, când s-a crăpat pământul și s-au prăbușit turlele bisericilor.",
+      "topics" : [
+        "cutremure"
+      ]
+    },
+    {
+      "dates" : [
+        "1730",
+        "anii 1990"
+      ],
+      "endSeconds" : 1311,
+      "importance" : 2,
+      "kind" : "event",
+      "people" : [
+        "Constantin Mavrocordat"
+      ],
+      "places" : [
+        "Biserica Sfântul Spiridon Vechi"
+      ],
+      "startSeconds" : 1275,
+      "statement" : "Biserica Sfântul Spiridon Vechi a fost ridicată de Constantin Mavrocordat în jurul anului 1730 și închinată Patriarhiei Antiohiei; a fost demolată de regimul comunist și refăcută după anii '90.",
+      "topics" : [
+        "religie",
+        "comunism"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 1370,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+        "Petre Antonescu"
+      ],
+      "places" : [
+        "Palatul Agricola"
+      ],
+      "startSeconds" : 1312,
+      "statement" : "Palatul Agricola, opera lui Petre Antonescu, are pe acoperiș un ansamblu de gloriete, decorație folosită de regulă pentru observarea cerului (există, de exemplu, la Versailles) și, după știința ghidului, unică în București; se vede doar de pe malul opus al Dâmboviței.",
+      "topics" : [
+        "arhitectură"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 1449,
+      "importance" : 2,
+      "kind" : "opinion",
+      "people" : [
+
+      ],
+      "places" : [
+        "Centrul Vechi"
+      ],
+      "startSeconds" : 1391,
+      "statement" : "Fațadele multor clădiri istorice din Centrul Vechi, nerenovate de zeci de ani, sunt un pericol real: ghidul dă exemplul unei clădiri unde un semn „atenție, cade tencuiala” stă de vreo 10 ani fără nicio intervenție.",
+      "topics" : [
+        "urbanism",
+        "cutremure"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 1507,
+      "importance" : 2,
+      "kind" : "opinion",
+      "people" : [
+
+      ],
+      "places" : [
+        "Centrul Vechi"
+      ],
+      "startSeconds" : 1450,
+      "statement" : "Zona de cluburi din Centrul Vechi ar fi foarte expusă la un cutremur: multe clădiri nu au mai fost consolidate de mult, iar unele localuri funcționează în hrube cu intrări înguste, cu peste 100 de oameni înăuntru.",
+      "topics" : [
+        "cutremure",
+        "viață cotidiană"
+      ]
+    },
+    {
+      "dates" : [
+        "1800"
+      ],
+      "endSeconds" : 1487,
+      "importance" : 2,
+      "kind" : "anecdote",
+      "people" : [
+
+      ],
+      "places" : [
+        "Centrul Vechi"
+      ],
+      "startSeconds" : 1450,
+      "statement" : "Pe la 1800, rapoartele vremii consemnează negustori care spărgeau zidurile hanurilor ca să-și deschidă prăvălia spre stradă; zidurile slăbite se prăbușeau uneori, omorând trecători.",
+      "topics" : [
+        "viață cotidiană",
+        "comerț"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 1528,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Centrul Vechi"
+      ],
+      "startSeconds" : 1508,
+      "statement" : "Pivnițele sunt cele mai vechi structuri păstrate în Centrul Vechi: clădirile de deasupra erau adesea din lemn, dar pivnițele se construiau din piatră.",
+      "topics" : [
+        "arhitectură"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 1547,
+      "importance" : 3,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Banca Națională a României",
+        "Hanul Șerban Vodă",
+        "Strada Lipscani"
+      ],
+      "startSeconds" : 1529,
+      "statement" : "Banca Națională este ridicată pe terenul celui mai mare han al Bucureștiului de odinioară, Hanul Șerban Vodă, ale cărui pivnițe au fost parțial descoperite la lucrările de decopertare a străzilor, inclusiv pe Lipscani.",
+      "topics" : [
+        "arhitectură",
+        "comerț"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XIX"
+      ],
+      "endSeconds" : 1642,
+      "importance" : 3,
+      "kind" : "event",
+      "people" : [
+        "Paul Gottereau"
+      ],
+      "places" : [
+        "Palatul CEC",
+        "Mănăstirea Sfântul Ioan cel Mare",
+        "Cimitirul Bellu"
+      ],
+      "startSeconds" : 1548,
+      "statement" : "Palatul CEC, opera arhitectului francez Paul Gottereau, a fost ridicat pe locul Mănăstirii Sfântul Ioan cel Mare, închinată unei mănăstiri din zona Ioanninei; o parte din mormintele boierești de acolo au fost mutate la Bellu.",
+      "topics" : [
+        "arhitectură",
+        "religie"
+      ]
+    },
+    {
+      "dates" : [
+        "1863"
+      ],
+      "endSeconds" : 1735,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "București"
+      ],
+      "startSeconds" : 1643,
+      "statement" : "Demolarea unor biserici vechi în secolul al XIX-lea nu a stârnit scandal: sentimentul sacralității era altul, nu exista încă ideea de conservare a monumentelor, iar mănăstirile închinate rămăseseră fără bani după secularizarea din 1863 și erau degradate.",
+      "topics" : [
+        "religie",
+        "urbanism"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XIX"
+      ],
+      "endSeconds" : 1696,
+      "importance" : 3,
+      "kind" : "fact",
+      "people" : [
+        "Carol I"
+      ],
+      "places" : [
+        "București"
+      ],
+      "startSeconds" : 1661,
+      "statement" : "Despre Carol I se spune că a găsit un oraș de chirpici și a lăsat unul de piatră; până atunci Bucureștiul nu fusese planificat, ci crescuse după nevoile fiecărei epoci și arăta ca o mare grădină.",
+      "topics" : [
+        "urbanism",
+        "monarhie"
+      ]
+    },
+    {
+      "dates" : [
+        "1821"
+      ],
+      "endSeconds" : 1793,
+      "importance" : 2,
+      "kind" : "event",
+      "people" : [
+        "Ștefan Bellu",
+        "Barbu Bellu",
+        "Tudor Vladimirescu",
+        "Alexandru Ipsilanti"
+      ],
+      "places" : [
+        "Casele lui Ștefan Bellu"
+      ],
+      "startSeconds" : 1755,
+      "statement" : "În casele lui Ștefan Bellu, unchiul lui Barbu Bellu, au fost executați în 1821 mai mulți conducători din mișcarea lui Tudor Vladimirescu și din Eterie care încercaseră să treacă de partea turcilor; turcii nu au avut încredere în trădători.",
+      "topics" : [
+        "istorie politică",
+        "războaie"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 1832,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+        "Mihail Cantacuzino"
+      ],
+      "places" : [
+        "Biserica Zlătari"
+      ],
+      "startSeconds" : 1794,
+      "statement" : "Biserica Zlătari (Sfinții Ciprian și Iustina) își trage numele din slavonul „zlato” (aur), după meșterii aurari din zonă; ctitor a fost spătarul Mihail Cantacuzino, iar la vremea ei era printre cele mai bogate biserici din țară.",
+      "topics" : [
+        "religie",
+        "comerț"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XIX"
+      ],
+      "endSeconds" : 1871,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Hanul Zarafilor",
+        "Biserica Zlătari"
+      ],
+      "startSeconds" : 1833,
+      "statement" : "În jurul Bisericii Zlătari era Hanul Zarafilor; zarafii schimbau, cu profit substanțial, monedele diferitelor state (otomane, austriece etc.) și au fost înlocuiți spre sfârșitul secolului al XIX-lea de marile bănci construite tot în Centrul Vechi.",
+      "topics" : [
+        "comerț"
+      ]
+    },
+    {
+      "dates" : [
+        "interbelic"
+      ],
+      "endSeconds" : 1889,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Centrul Vechi"
+      ],
+      "startSeconds" : 1872,
+      "statement" : "Până aproape de Al Doilea Război Mondial, Centrul Vechi a concentrat esența activității economice a României.",
+      "topics" : [
+        "comerț",
+        "interbelic"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 1944,
+      "importance" : 1,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Strada Lipscani",
+        "Calea Victoriei"
+      ],
+      "startSeconds" : 1890,
+      "statement" : "Capătul vestic al străzii Lipscani, spre Calea Victoriei, era cel mai bun vad comercial; străzile longitudinale ale Centrului Vechi și-au păstrat cel mai bine configurația veche.",
+      "topics" : [
+        "comerț",
+        "urbanism"
+      ]
+    },
+    {
+      "dates" : [
+        "1891"
+      ],
+      "endSeconds" : 2023,
+      "importance" : 3,
+      "kind" : "event",
+      "people" : [
+        "Felix Xenopol",
+        "Xavier Villacrosse",
+        "Mihalache Macca"
+      ],
+      "places" : [
+        "Pasajul Macca-Villacrosse"
+      ],
+      "startSeconds" : 1945,
+      "statement" : "Pasajul Macca-Villacrosse, cu formă de potcoavă în două aripi, a fost construit în 1891 de arhitectul Felix Xenopol pe proprietățile lui Villacrosse și ale negustorului grec Macca; a fost primul pasaj pietonal din București, după moda pariziană și milaneză.",
+      "topics" : [
+        "arhitectură",
+        "comerț"
+      ]
+    },
+    {
+      "dates" : [
+        "comunism",
+        "anii 1990"
+      ],
+      "endSeconds" : 2083,
+      "importance" : 3,
+      "kind" : "anecdote",
+      "people" : [
+
+      ],
+      "places" : [
+        "Pasajul Macca-Villacrosse"
+      ],
+      "startSeconds" : 2024,
+      "statement" : "În perioada comunistă, Pasajul Macca-Villacrosse s-a numit Pasajul Bijuteria; mulți îl numesc greșit „Valea Regilor”, după prima cafenea cu narghilea deschisă acolo după 1989, la sfârșitul anilor '90.",
+      "topics" : [
+        "comunism",
+        "viață cotidiană"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 2120,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Strada Academiei",
+        "Academia de la Sfântul Sava"
+      ],
+      "startSeconds" : 2084,
+      "statement" : "Strada Academiei nu poartă numele Academiei Române, ci al vechii școli de la Sfântul Sava, numită și Academie, către care ducea.",
+      "topics" : [
+        "cultură",
+        "urbanism"
+      ]
+    },
+    {
+      "dates" : [
+        "interbelic"
+      ],
+      "endSeconds" : 2157,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Calea Victoriei",
+        "Casa Capșa"
+      ],
+      "startSeconds" : 2121,
+      "statement" : "Până în perioada interbelică inclusiv, Calea Victoriei a fost principala arteră comercială a Bucureștiului, cu marile magazine și cu Casa Capșa, centrul literar și de agrement al orașului.",
+      "topics" : [
+        "comerț",
+        "cultură",
+        "interbelic"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XIX"
+      ],
+      "endSeconds" : 2200,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+        "Mitropolitul Nifon"
+      ],
+      "places" : [
+        "Palatul Nifon"
+      ],
+      "startSeconds" : 2158,
+      "statement" : "Palatul Nifon poartă numele mitropolitului Nifon, primul care a purtat titlul de Mitropolit primat al României; în timpul lui au avut loc Unirea Principatelor și unificarea bisericilor Moldovei și Țării Românești, preludiu la Patriarhie. Clădirea este de ani buni un șantier interminabil.",
+      "topics" : [
+        "religie",
+        "istorie politică"
+      ]
+    },
+    {
+      "dates" : [
+        "1683"
+      ],
+      "endSeconds" : 2257,
+      "importance" : 3,
+      "kind" : "event",
+      "people" : [
+        "Doamna Maria Cantacuzino",
+        "Șerban Cantacuzino"
+      ],
+      "places" : [
+        "Biserica Doamnei",
+        "Strada Doamnei"
+      ],
+      "startSeconds" : 2201,
+      "statement" : "Biserica Doamnei a fost terminată în 1683 de Doamna Maria, soția lui Șerban Cantacuzino, pe proprietățile familiei; păstrează în mare parte pictura inițială și dă numele străzii Doamnei. Azi e înconjurată de blocuri ridicate de comuniști.",
+      "topics" : [
+        "religie",
+        "arhitectură"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XVII"
+      ],
+      "endSeconds" : 2314,
+      "importance" : 3,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Biserica Doamnei"
+      ],
+      "startSeconds" : 2258,
+      "statement" : "Biserica Doamnei pare scufundată: pragul ei e cu cel puțin un metru sub nivelul actual al străzii, pentru că în 300 de ani nivelul solului din zona intens locuită a crescut, în principal din cauza gunoaielor acumulate.",
+      "topics" : [
+        "urbanism",
+        "viață cotidiană"
+      ]
+    },
+    {
+      "dates" : [
+        "1896"
+      ],
+      "endSeconds" : 2445,
+      "importance" : 3,
+      "kind" : "event",
+      "people" : [
+        "Carol I",
+        "Porfirie Uspenski"
+      ],
+      "places" : [
+        "Cercul Militar Național",
+        "Mănăstirea Sărindar"
+      ],
+      "startSeconds" : 2353,
+      "statement" : "Cercul Militar Național a fost ridicat pe locul Mănăstirii Sărindar, una dintre cele mai mari biserici ale capitalei, cu trei nave, numită catedrala orașului de un episcop rus; avea un spațiu separat pentru femei și a fost demolată în 1896.",
+      "topics" : [
+        "religie",
+        "urbanism",
+        "monarhie"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 2409,
+      "importance" : 2,
+      "kind" : "anecdote",
+      "people" : [
+        "Matei Basarab"
+      ],
+      "places" : [
+        "Mănăstirea Sărindar"
+      ],
+      "startSeconds" : 2373,
+      "statement" : "„Sărindar” vine de la sărindare, cele 40 de liturghii pentru cei adormiți; o legendă spune că ar fi fost a 40-a mănăstire ridicată de Matei Basarab.",
+      "topics" : [
+        "religie",
+        "legende"
+      ]
+    },
+    {
+      "dates" : [
+        "1861"
+      ],
+      "endSeconds" : 2484,
+      "importance" : 2,
+      "kind" : "event",
+      "people" : [
+
+      ],
+      "places" : [
+        "Bulevardul Elisabeta"
+      ],
+      "startSeconds" : 2446,
+      "statement" : "Bulevardul Elisabeta a fost primul bulevard sistematizat din București, trasat în jurul anului 1861; demolările pentru marile proiecte erau percepute atunci ca modernizare, nu ca pierdere.",
+      "topics" : [
+        "urbanism"
+      ]
+    },
+    {
+      "dates" : [
+        "1667",
+        "1683"
+      ],
+      "endSeconds" : 2541,
+      "importance" : 3,
+      "kind" : "event",
+      "people" : [
+        "Kara Hamie"
+      ],
+      "places" : [
+        "Strada Doamnei"
+      ],
+      "startSeconds" : 2485,
+      "statement" : "Pe strada Doamnei a funcționat prima cafenea din București și din România, deschisă în 1667 de Kara Hamie, un turc din garda sultanului, cu cafea și narghilea, înaintea primei cafenele din Viena, apărută după asediul din 1683.",
+      "topics" : [
+        "gastronomie",
+        "viață cotidiană"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XIX"
+      ],
+      "endSeconds" : 2598,
+      "importance" : 1,
+      "kind" : "anecdote",
+      "people" : [
+        "Teodor Vârnav"
+      ],
+      "places" : [
+        "Strada Doamnei",
+        "Hanul Golgota"
+      ],
+      "startSeconds" : 2542,
+      "statement" : "Tot pe strada Doamnei era Hanul Golgota, punct de plecare al poștalioanelor; Teodor Vârnav, considerat primul memorialist al literaturii române, descrie o călătorie de groază de aici până în Moldova.",
+      "topics" : [
+        "transport",
+        "literatură"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XVII"
+      ],
+      "endSeconds" : 2634,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+        "Constantin Brâncoveanu"
+      ],
+      "places" : [
+        "Piața Universității",
+        "Mănăstirea Sfântul Sava"
+      ],
+      "startSeconds" : 2599,
+      "statement" : "Înainte de 1861, pe locul statuilor din Piața Universității și până la Universitate se afla Mănăstirea Sfântul Sava, apărută la începutul secolului al XVII-lea și restaurată integral de Brâncoveanu.",
+      "topics" : [
+        "religie",
+        "urbanism"
+      ]
+    },
+    {
+      "dates" : [
+        "1695"
+      ],
+      "endSeconds" : 2670,
+      "importance" : 3,
+      "kind" : "event",
+      "people" : [
+        "Constantin Brâncoveanu"
+      ],
+      "places" : [
+        "Academia de la Sfântul Sava"
+      ],
+      "startSeconds" : 2617,
+      "statement" : "În 1695 Brâncoveanu a înființat la Sfântul Sava prima școală superioară din istoria României, Academia, unde veneau studenți din tot răsăritul ortodox (greci, bulgari, sârbi), cu profesori în mare parte greci; a funcționat până la mijlocul secolului al XIX-lea.",
+      "topics" : [
+        "cultură"
+      ]
+    },
+    {
+      "dates" : [
+        "1779",
+        "2010"
+      ],
+      "endSeconds" : 2727,
+      "importance" : 2,
+      "kind" : "event",
+      "people" : [
+        "Alexandru Ipsilanti"
+      ],
+      "places" : [
+        "Piața Universității",
+        "Academia de la Sfântul Sava"
+      ],
+      "startSeconds" : 2653,
+      "statement" : "La lucrările pentru parcarea subterană din fața Universității (în jurul anului 2010) s-a descoperit fundația clădirii școlii de la Sfântul Sava ridicate în 1779 de Alexandru Ipsilanti: o clădire avansată pentru epocă, cu cazare, 60 de burse, patru cicluri de învățământ și bucătărie.",
+      "topics" : [
+        "cultură"
+      ]
+    },
+    {
+      "dates" : [
+        "1818"
+      ],
+      "endSeconds" : 2802,
+      "importance" : 3,
+      "kind" : "event",
+      "people" : [
+        "Gheorghe Lazăr",
+        "Ioan Caragea"
+      ],
+      "places" : [
+        "Colegiul Sfântul Sava"
+      ],
+      "startSeconds" : 2728,
+      "statement" : "În 1818 domnitorul Ioan Caragea i-a permis ardeleanului Gheorghe Lazăr să fondeze prima școală de stat în limba română din Țara Românească, la Sfântul Sava, punând temeliile învățământului în limba română.",
+      "topics" : [
+        "cultură"
+      ]
+    },
+    {
+      "dates" : [
+        "1874"
+      ],
+      "endSeconds" : 2861,
+      "importance" : 3,
+      "kind" : "fact",
+      "people" : [
+        "Gheorghe Lazăr",
+        "Ion Heliade Rădulescu",
+        "Spiru Haret",
+        "Mihai Viteazul"
+      ],
+      "places" : [
+        "Piața Universității"
+      ],
+      "startSeconds" : 2783,
+      "statement" : "Statuile din fața Universității spun o poveste: Gheorghe Lazăr (fondatorul), elevul său Ion Heliade Rădulescu (care a înființat prima tipografie privată din București) și Spiru Haret (care a dat învățământului forma lui actuală). Cea mai veche statuie e a lui Mihai Viteazul, din 1874, operă a unui sculptor francez.",
+      "topics" : [
+        "cultură",
+        "artă",
+        "personalități"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 2916,
+      "importance" : 3,
+      "kind" : "anecdote",
+      "people" : [
+        "Mihai Viteazul",
+        "Marc Aureliu",
+        "Carol I"
+      ],
+      "places" : [
+        "Piața Universității"
+      ],
+      "startSeconds" : 2862,
+      "statement" : "Legenda că poziția picioarelor calului unei statui ecvestre arată cum a murit personajul nu se verifică: statuia lui Marc Aureliu din Roma, cea mai veche statuie ecvestră păstrată, are un picior ridicat, deși împăratul a murit de bătrânețe.",
+      "topics" : [
+        "legende",
+        "artă"
+      ]
+    },
+    {
+      "dates" : [
+        "interbelic"
+      ],
+      "endSeconds" : 2992,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Bulevardul I.C. Brătianu",
+        "Bulevardul Magheru",
+        "Calea Moșilor",
+        "Hanul lui Manuc"
+      ],
+      "startSeconds" : 2917,
+      "statement" : "Axa Bulevardelor Brătianu–Magheru, sistematizată mai târziu, în perioada interbelică, a tăiat din Centrul Vechi; înainte, Calea Moșilor cobora până la Hanul lui Manuc și făcea legătura cu Târgul Moșilor.",
+      "topics" : [
+        "urbanism",
+        "interbelic"
+      ]
+    },
+    {
+      "dates" : [
+        "1821"
+      ],
+      "endSeconds" : 3029,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+        "Costache Șuțu",
+        "Alexandru Șuțu",
+        "Tudor Vladimirescu"
+      ],
+      "places" : [
+        "Palatul Șuțu"
+      ],
+      "startSeconds" : 2993,
+      "statement" : "Palatul Șuțu poartă numele beizadelei Costache Șuțu, fiul ultimului domn fanariot al Țării Românești, Alexandru Șuțu, mort la începutul lui 1821, chiar înainte de izbucnirea Revoluției lui Tudor Vladimirescu.",
+      "topics" : [
+        "istorie politică",
+        "arhitectură"
+      ]
+    },
+    {
+      "dates" : [
+        "1821"
+      ],
+      "endSeconds" : 3048,
+      "importance" : 2,
+      "kind" : "anecdote",
+      "people" : [
+        "Alexandru Șuțu"
+      ],
+      "places" : [
+
+      ],
+      "startSeconds" : 3012,
+      "statement" : "Despre Alexandru Șuțu circulă legenda că ar fi fost otrăvit de medicul său personal ca să se faciliteze izbucnirea Revoluției de la 1821; nu s-a demonstrat niciodată.",
+      "topics" : [
+        "legende",
+        "istorie politică"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XIX"
+      ],
+      "endSeconds" : 3124,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+        "Costache Șuțu"
+      ],
+      "places" : [
+        "Palatul Șuțu",
+        "Muzeul Municipiului București"
+      ],
+      "startSeconds" : 3049,
+      "statement" : "Costache Șuțu s-a căsătorit în familia Racoviță și și-a ridicat palatul pe terenul acesteia; clădirea, în stil neogotic romantic de la mijlocul secolului al XIX-lea, este azi sediul central al Muzeului Municipiului București.",
+      "topics" : [
+        "arhitectură",
+        "cultură"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XVII"
+      ],
+      "endSeconds" : 3182,
+      "importance" : 3,
+      "kind" : "fact",
+      "people" : [
+        "Mihail Cantacuzino",
+        "Șerban Cantacuzino",
+        "Constantin Cantacuzino"
+      ],
+      "places" : [
+        "Spitalul Colțea"
+      ],
+      "startSeconds" : 3107,
+      "statement" : "Spitalul Colțea, ctitorit de spătarul Mihail Cantacuzino, fratele lui Șerban Cantacuzino și al stolnicului Constantin Cantacuzino, este cel mai vechi spital din România, cu peste trei secole de existență.",
+      "topics" : [
+        "personalități",
+        "viață cotidiană"
+      ]
+    },
+    {
+      "dates" : [
+        "1847"
+      ],
+      "endSeconds" : 3244,
+      "importance" : 1,
+      "kind" : "event",
+      "people" : [
+        "Lazăr Kalinderu"
+      ],
+      "places" : [
+        "Biserica Sfântul Ilie (biserica bulgară)"
+      ],
+      "startSeconds" : 3183,
+      "statement" : "Biserica Sfântul Ilie, azi biserica bulgară, distrusă de incendiul din 1847, a fost refăcută de Lazăr Kalinderu, motiv pentru care i se mai spune și biserica Kalinderu.",
+      "topics" : [
+        "religie"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 3374,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+        "Matei Basarab",
+        "Șerban Cantacuzino"
+      ],
+      "places" : [
+        "Biserica Bărăția"
+      ],
+      "startSeconds" : 3300,
+      "statement" : "Biserica Bărăția este probabil prima biserică romano-catolică din București; numele vine de la „barat” (frate, frăție), după frăția de călugări și credincioși catolici care a ridicat-o. Bisericile ne-ortodoxe aveau nevoie de aprobarea expresă a sultanului.",
+      "topics" : [
+        "religie"
+      ]
+    },
+    {
+      "dates" : [
+        "comunism"
+      ],
+      "endSeconds" : 3470,
+      "importance" : 2,
+      "kind" : "opinion",
+      "people" : [
+
+      ],
+      "places" : [
+        "Centrul Vechi"
+      ],
+      "startSeconds" : 3437,
+      "statement" : "Comunismul a întrerupt activitatea comercială tradițională a Centrului Vechi, care după aceea nu a mai fost reluată în același spirit al caselor cu prăvălie la parter și locuință la etaj.",
+      "topics" : [
+        "comunism",
+        "comerț"
+      ]
+    },
+    {
+      "dates" : [
+        "anii 1930"
+      ],
+      "endSeconds" : 3547,
+      "importance" : 3,
+      "kind" : "event",
+      "people" : [
+
+      ],
+      "places" : [
+        "Centrul Vechi",
+        "Strada Lipscani"
+      ],
+      "startSeconds" : 3471,
+      "statement" : "Încă din anii '30, autoritățile au interzis traficul auto pe străzile centrale ale Centrului Vechi, suprasaturate de mașini, și au impus reguli de construcție pentru a-i conserva specificul.",
+      "topics" : [
+        "urbanism",
+        "interbelic",
+        "transport"
+      ]
+    },
+    {
+      "dates" : [
+        "1880",
+        "interbelic"
+      ],
+      "endSeconds" : 3618,
+      "importance" : 2,
+      "kind" : "event",
+      "people" : [
+
+      ],
+      "places" : [
+        "Banca Națională a României"
+      ],
+      "startSeconds" : 3548,
+      "statement" : "Clădirea Băncii Naționale, cel mai mare edificiu din Centrul Vechi, a fost ridicată în jurul anului 1880 după proiectul a doi arhitecți francezi, în stil neoclasic eclectic; extinderea spre strada Doamnei datează din perioada interbelică.",
+      "topics" : [
+        "arhitectură",
+        "comerț"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XVII"
+      ],
+      "endSeconds" : 3713,
+      "importance" : 3,
+      "kind" : "fact",
+      "people" : [
+        "Șerban Cantacuzino"
+      ],
+      "places" : [
+        "Hanul Șerban Vodă",
+        "Banca Națională a României"
+      ],
+      "startSeconds" : 3619,
+      "statement" : "Hanul Șerban Vodă, ridicat de domnitorul Șerban Cantacuzino prin cumpărarea treptată a terenurilor, era un oraș în miniatură: patrulater fără ferestre spre exterior, porți masive din lemn și fier forjat, biserică, bucătării și zeci de camere închiriate.",
+      "topics" : [
+        "arhitectură",
+        "comerț"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 3886,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+        "Petre Antonescu"
+      ],
+      "places" : [
+        "Banca Marmorosch Blank"
+      ],
+      "startSeconds" : 3714,
+      "statement" : "Palatul Băncii Marmorosch Blank, una dintre primele bănci private din România, este opera lui Petre Antonescu, cu elemente ale Renașterii italiene; azi funcționează ca hotel.",
+      "topics" : [
+        "arhitectură",
+        "comerț"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XIX"
+      ],
+      "endSeconds" : 3809,
+      "importance" : 1,
+      "kind" : "anecdote",
+      "people" : [
+        "Constantin Bacalbașa"
+      ],
+      "places" : [
+        "Grădina Blanduzia"
+      ],
+      "startSeconds" : 3772,
+      "statement" : "În zonă a existat grădina de vară Blanduzia; memorialistul Constantin Bacalbașa povestește că acolo cânta orchestra vara, se servea cremă, iar pe la 11 noaptea sosea prima tranșă de covrigi calzi.",
+      "topics" : [
+        "viață cotidiană",
+        "gastronomie"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 3867,
+      "importance" : 1,
+      "kind" : "fact",
+      "people" : [
+        "Leon Stern"
+      ],
+      "places" : [
+        "Strada Academiei",
+        "Strada Doamnei",
+        "Cinema Luxor"
+      ],
+      "startSeconds" : 3810,
+      "statement" : "Între Strada Academiei și strada Doamnei se află un pasaj-bloc considerat prima manifestare de arhitectură urbană modernă din București, proiectat de un arhitect de origine evreiască (Leon Stern, după transcript); la parter a funcționat unul dintre primele cinematografe, Luxor.",
+      "topics" : [
+        "arhitectură",
+        "cultură"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XIX"
+      ],
+      "endSeconds" : 3981,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+        "Eugeniu Carada",
+        "Ion C. Brătianu",
+        "Ion I.C. Brătianu"
+      ],
+      "places" : [
+        "Strada Eugeniu Carada",
+        "Banca Națională a României"
+      ],
+      "startSeconds" : 3887,
+      "statement" : "Strada Eugeniu Carada, apărută după construirea Băncii Naționale, poartă numele unuia dintre fondatorii băncii; Carada, om de casă al lui Ion C. Brătianu, era o figură controversată, temută de politicieni, care și-a lăsat întreaga avere statului român.",
+      "topics" : [
+        "personalități",
+        "istorie politică"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XIX"
+      ],
+      "endSeconds" : 3963,
+      "importance" : 2,
+      "kind" : "anecdote",
+      "people" : [
+        "Dimitrie Sturdza",
+        "Eugeniu Carada"
+      ],
+      "places" : [
+
+      ],
+      "startSeconds" : 3924,
+      "statement" : "Dimitrie Sturdza era atât de terifiat de influența lui Eugeniu Carada încât, la o ședință, a izbucnit în plâns strigând să iasă domnul Carada din sală.",
+      "topics" : [
+        "personalități",
+        "istorie politică"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XVI"
+      ],
+      "endSeconds" : 4133,
+      "importance" : 1,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Biserica Hanul Grecilor",
+        "Strada Stavropoleos"
+      ],
+      "startSeconds" : 4078,
+      "statement" : "Pe locul unei clădiri neoclasice de lângă strada Stavropoleos a existat o biserică dispărută, a Hanului Grecilor, una dintre cele mai vechi cunoscute din București (prima jumătate a secolului al XVI-lea), unde trăgeau negustorii greci.",
+      "topics" : [
+        "religie",
+        "comerț"
+      ]
+    },
+    {
+      "dates" : [
+        "1724"
+      ],
+      "endSeconds" : 4396,
+      "importance" : 3,
+      "kind" : "fact",
+      "people" : [
+        "Ioanichie Stratonikeas"
+      ],
+      "places" : [
+        "Biserica Stavropoleos",
+        "Strada Stavropoleos"
+      ],
+      "startSeconds" : 4262,
+      "statement" : "Biserica Stavropoleos poartă numele arhimandritului Ioanichie, ajuns episcop de Stavropoleos, în Epir; a fost construită în 1724 pentru hanul din jurul ei (nu invers), han dispărut în secolul al XIX-lea.",
+      "topics" : [
+        "religie",
+        "arhitectură"
+      ]
+    },
+    {
+      "dates" : [
+        "1724"
+      ],
+      "endSeconds" : 4431,
+      "importance" : 3,
+      "kind" : "fact",
+      "people" : [
+        "Nicolae Iorga"
+      ],
+      "places" : [
+        "Biserica Stavropoleos"
+      ],
+      "startSeconds" : 4299,
+      "statement" : "Nicolae Iorga considera Biserica Stavropoleos o bijuterie fără egal în România ca armonie a proporțiilor; este una dintre ultimele manifestări ale stilului brâncovenesc și își păstrează pictura exterioară inițială.",
+      "topics" : [
+        "arhitectură",
+        "artă"
+      ]
+    },
+    {
+      "dates" : [
+        "1904"
+      ],
+      "endSeconds" : 4488,
+      "importance" : 2,
+      "kind" : "event",
+      "people" : [
+        "Ion Mincu"
+      ],
+      "places" : [
+        "Biserica Stavropoleos",
+        "Mănăstirea Sfântul Ioan cel Mare"
+      ],
+      "startSeconds" : 4432,
+      "statement" : "Restaurarea Bisericii Stavropoleos, începută în 1904, a fost unul dintre principalele proiecte ale lui Ion Mincu, părintele școlii românești moderne de arhitectură, care a readus-o la aspectul inițial; în anexe se află probabil cel mai mare lapidariu din București, cu sculpturi din fosta mănăstire Sfântul Ioan cel Mare.",
+      "topics" : [
+        "arhitectură"
+      ]
+    },
+    {
+      "dates" : [
+        "1860",
+        "1944"
+      ],
+      "endSeconds" : 4508,
+      "importance" : 2,
+      "kind" : "event",
+      "people" : [
+        "Alexandru Orăscu"
+      ],
+      "places" : [
+        "Universitatea din București"
+      ],
+      "startSeconds" : 4469,
+      "statement" : "Prima clădire a Universității, ridicată de Alexandru Orăscu în anii 1860, arăta cu totul altfel și a fost distrusă de bombardamentele aliate din 1944; clădirea de azi e refăcută după război.",
+      "topics" : [
+        "arhitectură",
+        "războaie"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XIX"
+      ],
+      "endSeconds" : 4563,
+      "importance" : 3,
+      "kind" : "fact",
+      "people" : [
+        "Mihai Eminescu",
+        "Ion Luca Caragiale",
+        "Alexandru Macedonski"
+      ],
+      "places" : [
+        "Caru' cu Bere"
+      ],
+      "startSeconds" : 4509,
+      "statement" : "Caru' cu Bere a fost construit de un arhitect polonez pentru frații ardeleni Mircea, după modelul unei berării nemțești, cu influențe gotice; aici beau Eminescu, Caragiale, Macedonski și alți membri ai elitei literare.",
+      "topics" : [
+        "gastronomie",
+        "literatură",
+        "personalități"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 4618,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Caru' cu Bere"
+      ],
+      "startSeconds" : 4545,
+      "statement" : "Caru' cu Bere a adus meniul nemțesc într-un oraș obișnuit cu bucătăria orientală: crenvurști, frankfurteri, salată de ridiche neagră din partea casei și o bere specială.",
+      "topics" : [
+        "gastronomie"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XIX"
+      ],
+      "endSeconds" : 4694,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Strada Lipscani"
+      ],
+      "startSeconds" : 4659,
+      "statement" : "Negustorii lipscani aduceau, în călătorii de afaceri de circa patru luni, mărfuri exotice pentru vremea lor: haine apusene, cuțite, instrumente de dentist, veselă și oglinzi, inclusiv de la Breslau.",
+      "topics" : [
+        "comerț"
+      ]
+    },
+    {
+      "dates" : [
+        "anii 1930"
+      ],
+      "endSeconds" : 4736,
+      "importance" : 3,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Strada Lipscani"
+      ],
+      "startSeconds" : 4695,
+      "statement" : "Lipscani este, după ghid, singura stradă din București care nu a avut niciodată apartamente de locuit, fiind dintotdeauna dedicată exclusiv prăvăliilor; a devenit stradă pietonală în anii '30.",
+      "topics" : [
+        "comerț",
+        "urbanism"
+      ]
+    },
+    {
+      "dates" : [
+        "1900"
+      ],
+      "endSeconds" : 4793,
+      "importance" : 2,
+      "kind" : "event",
+      "people" : [
+
+      ],
+      "places" : [
+        "Statuia Lupoaicei",
+        "Strada Lipscani"
+      ],
+      "startSeconds" : 4737,
+      "statement" : "Statuia Lupoaicei cu Romulus și Remus, de la capătul străzii Lipscani, a fost un dar al municipalității Romei din jurul anului 1900 și subliniază aspirațiile de romanitate ale României.",
+      "topics" : [
+        "artă",
+        "istorie politică"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 4832,
+      "importance" : 1,
+      "kind" : "fact",
+      "people" : [
+        "Șerban Cantacuzino (paharnicul)"
+      ],
+      "places" : [
+        "Biserica Sfântul Nicolae Șelari"
+      ],
+      "startSeconds" : 4794,
+      "statement" : "Biserica Sfântul Nicolae Șelari a fost ctitorită de paharnicul Șerban Cantacuzino (nu domnitorul) și preluată apoi de breslele lumânărarilor și bumbacarilor.",
+      "topics" : [
+        "religie",
+        "comerț"
+      ]
+    },
+    {
+      "dates" : [
+        "1812",
+        "1814"
+      ],
+      "endSeconds" : 4887,
+      "importance" : 3,
+      "kind" : "event",
+      "people" : [
+        "Petru Efesiu",
+        "Macarie Ieromonahul",
+        "Anton Pann"
+      ],
+      "places" : [
+        "Biserica Sfântul Nicolae Șelari"
+      ],
+      "startSeconds" : 4833,
+      "statement" : "Pe la 1812–1814, grecul Petru Efesiu a deschis lângă Biserica Sfântul Nicolae Șelari o școală de muzică, unde au studiat Macarie Ieromonahul și Anton Pann; ca să scape de copierea de mână a manuscriselor, a înființat prima tipografie de muzică psaltică din lume.",
+      "topics" : [
+        "muzică",
+        "religie",
+        "cultură"
+      ]
+    },
+    {
+      "dates" : [
+        "1820",
+        "1821"
+      ],
+      "endSeconds" : 4943,
+      "importance" : 3,
+      "kind" : "event",
+      "people" : [
+        "Petru Efesiu",
+        "Tudor Vladimirescu"
+      ],
+      "places" : [
+        "Biserica Sfântul Nicolae Șelari"
+      ],
+      "startSeconds" : 4870,
+      "statement" : "În 1820 au apărut aici primele două cărți de muzică psaltică tipărite din lume, Anastasimatarul și Doxastarul; tipografia și-a încetat activitatea în 1821, odată cu revoluția lui Tudor Vladimirescu.",
+      "topics" : [
+        "muzică",
+        "cultură"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XIX"
+      ],
+      "endSeconds" : 5020,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+        "Ion Heliade Rădulescu",
+        "Nicolae Bălcescu",
+        "Nicolae Filimon",
+        "Ion Ghica"
+      ],
+      "places" : [
+        "Academia de la Sfântul Sava"
+      ],
+      "startSeconds" : 4944,
+      "statement" : "Printre elevii de la Sfântul Sava s-au numărat Ion Heliade Rădulescu, Nicolae Bălcescu și Nicolae Filimon, autorul primului roman din literatura română și al primelor memorii literare despre Centrul Vechi.",
+      "topics" : [
+        "literatură",
+        "cultură"
+      ]
+    },
+    {
+      "dates" : [
+        "1780",
+        "secolul XX"
+      ],
+      "endSeconds" : 5060,
+      "importance" : 1,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "București"
+      ],
+      "startSeconds" : 5021,
+      "statement" : "Primele planuri ale orașului apar începând cu anii 1780, iar la începutul secolului XX s-a făcut primul plan științific al Bucureștiului.",
+      "topics" : [
+        "urbanism"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 5186,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Strada Covaci"
+      ],
+      "startSeconds" : 5149,
+      "statement" : "Strada Covaci înseamnă strada fierarilor („covaci” înseamnă fierar atât în slavonă, cât și în maghiară); ghidul compară Centrul Vechi, cu străzile lui pe meserii, cu King's Landing din Game of Thrones.",
+      "topics" : [
+        "comerț",
+        "urbanism"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XIX"
+      ],
+      "endSeconds" : 5225,
+      "importance" : 2,
+      "kind" : "anecdote",
+      "people" : [
+        "Iordache Ionescu"
+      ],
+      "places" : [
+        "Strada Covaci"
+      ],
+      "startSeconds" : 5169,
+      "statement" : "Pe strada Covaci a funcționat în secolul al XIX-lea restaurantul lui Iordache Ionescu, al cărui meniu, scris de un pamfletar celebru, avea denumiri pline de umor: gheața era „cremă de Siberia”.",
+      "topics" : [
+        "gastronomie"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XIX"
+      ],
+      "endSeconds" : 5244,
+      "importance" : 3,
+      "kind" : "anecdote",
+      "people" : [
+        "Iordache Ionescu"
+      ],
+      "places" : [
+        "Strada Covaci"
+      ],
+      "startSeconds" : 5207,
+      "statement" : "Legenda spune că mititeii au fost inventați la restaurantul lui Iordache Ionescu de pe strada Covaci: hangiul a rămas fără mațe pentru cârnați și, având mulți clienți, a pus amestecul direct pe grătar, adăugând bicarbonat.",
+      "topics" : [
+        "gastronomie",
+        "legende"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XIX"
+      ],
+      "endSeconds" : 5280,
+      "importance" : 2,
+      "kind" : "anecdote",
+      "people" : [
+
+      ],
+      "places" : [
+        "Strada Covaci"
+      ],
+      "startSeconds" : 5245,
+      "statement" : "Tot acolo s-ar fi inventat „bateria”: o sticlă de vin servită cu o sticlă de apă minerală.",
+      "topics" : [
+        "gastronomie"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 5376,
+      "importance" : 2,
+      "kind" : "anecdote",
+      "people" : [
+        "Mihai Eminescu",
+        "Ioan Slavici",
+        "Fane Spoitoru"
+      ],
+      "places" : [
+        "Centrul Vechi"
+      ],
+      "startSeconds" : 5322,
+      "statement" : "Într-o clădire din zonă s-au lansat în literatură titani precum Eminescu și Slavici; paradoxal, peste timp clădirea a ajuns în posesia lui Fane Spoitoru, iar acolo s-au lansat și maneliști.",
+      "topics" : [
+        "literatură",
+        "muzică"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XIX"
+      ],
+      "endSeconds" : 5413,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+        "Mihai Eminescu"
+      ],
+      "places" : [
+        "Centrul Vechi"
+      ],
+      "startSeconds" : 5359,
+      "statement" : "O plachetă amintește că Mihai Eminescu a lucrat ca redactor la ziarul Timpul; ghidul observă cât de intensă a fost activitatea poetului în cei 39 de ani de viață.",
+      "topics" : [
+        "literatură",
+        "personalități"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 5451,
+      "importance" : 1,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Piața cu flori",
+        "Hanul lui Manuc"
+      ],
+      "startSeconds" : 5414,
+      "statement" : "Zona de lângă Hanul lui Manuc s-a numit Piața cu flori și, mai înainte, bazarul, vechiul centru comercial al orașului.",
+      "topics" : [
+        "comerț"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 5527,
+      "importance" : 3,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Curtea Domnească",
+        "Strada Șepcari"
+      ],
+      "startSeconds" : 5452,
+      "statement" : "Cuvântul „pușcărie”, existent doar în limba română, vine de la „pușcă”: turnul Curții Domnești servea ca arsenal pentru tunurile care anunțau evenimentele domniei și, totodată, ca închisoare (deținuții de drept comun în pivniță, boierii căzuți în dizgrație sus în turn).",
+      "topics" : [
+        "istorie politică",
+        "viață cotidiană"
+      ]
+    },
+    {
+      "dates" : [
+        "1847"
+      ],
+      "endSeconds" : 5549,
+      "importance" : 3,
+      "kind" : "event",
+      "people" : [
+
+      ],
+      "places" : [
+        "Biserica Sfântul Anton",
+        "Biserica Curtea Veche"
+      ],
+      "startSeconds" : 5528,
+      "statement" : "Marele incendiu din 1847, probabil cel mai mare din istoria Bucureștiului, a distrus definitiv biserica Sfântul Anton a pușcăriei; locul e marcat azi de o coloană cu o cruce.",
+      "topics" : [
+        "urbanism",
+        "religie"
+      ]
+    },
+    {
+      "dates" : [
+        "1880"
+      ],
+      "endSeconds" : 5626,
+      "importance" : 3,
+      "kind" : "event",
+      "people" : [
+
+      ],
+      "places" : [
+        "Râul Dâmbovița"
+      ],
+      "startSeconds" : 5550,
+      "statement" : "Regularizarea Dâmboviței a fost probabil prima campanie de presă din istorie pentru convingerea publicului în favoarea unui mare proiect edilitar; inundațiile erau cauzate în mare parte de morile și stăvilarele de pe râu.",
+      "topics" : [
+        "urbanism"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XIX"
+      ],
+      "endSeconds" : 5651,
+      "importance" : 1,
+      "kind" : "fact",
+      "people" : [
+        "Xavier Villacrosse"
+      ],
+      "places" : [
+        "Primăria Capitalei",
+        "Pasajul Macca-Villacrosse"
+      ],
+      "startSeconds" : 5608,
+      "statement" : "Una dintre primele clădiri ale Sfatului Orășenesc (Primăria Capitalei) a fost opera arhitectului al cărui nume îl poartă Pasajul Macca-Villacrosse.",
+      "topics" : [
+        "arhitectură"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 5708,
+      "importance" : 2,
+      "kind" : "opinion",
+      "people" : [
+
+      ],
+      "places" : [
+        "Centrul Vechi"
+      ],
+      "startSeconds" : 5652,
+      "statement" : "Multe locuri istorice din Centrul Vechi nu sunt marcate de nicio instituție; ghidul propune plăcuțe explicative sau chiar un tur virtual cu „restaurarea cibernetică” a clădirilor dispărute.",
+      "topics" : [
+        "cultură",
+        "urbanism"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 5725,
+      "importance" : 1,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Strada Șepcari"
+      ],
+      "startSeconds" : 5709,
+      "statement" : "Strada Șepcari poartă numele pălărierilor (șepcarilor); era legată de strada Pușcăriei.",
+      "topics" : [
+        "comerț"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XIX"
+      ],
+      "endSeconds" : 5763,
+      "importance" : 2,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Strada Băcani"
+      ],
+      "startSeconds" : 5726,
+      "statement" : "Băcanii (din turcescul „bakkal”, vânzător de legume uscate) și-au extins comerțul la tot felul de produse de import, vinuri franțuzești și altele, îmbogățindu-se în a doua jumătate a secolului al XIX-lea.",
+      "topics" : [
+        "comerț",
+        "gastronomie"
+      ]
+    },
+    {
+      "dates" : [
+        "secolul XIX"
+      ],
+      "endSeconds" : 5781,
+      "importance" : 3,
+      "kind" : "anecdote",
+      "people" : [
+
+      ],
+      "places" : [
+        "Strada Băcani"
+      ],
+      "startSeconds" : 5746,
+      "statement" : "Mulți băcani erau albanezi musulmani care purtau șorțuri verzi; de aici vine expresia „burtă verde”, pentru parvenitul îmbogățit, dar fără educație.",
+      "topics" : [
+        "viață cotidiană",
+        "comerț"
+      ]
+    },
+    {
+      "dates" : [
+
+      ],
+      "endSeconds" : 5838,
+      "importance" : 1,
+      "kind" : "fact",
+      "people" : [
+
+      ],
+      "places" : [
+        "Biserica Sfântul Gheorghe Nou",
+        "Magazinul Cocor",
+        "Calea Moșilor",
+        "Magazinul București"
+      ],
+      "startSeconds" : 5782,
+      "statement" : "Biserica Sfântul Gheorghe Nou este azi mascată de magazinul Cocor; prin spate trecea Calea Moșilor, iar zona era acum peste 200 de ani principalul centru comercial al orașului. Mai sus se află Magazinul București, unul dintre primele magazine universale.",
+      "topics" : [
+        "comerț",
+        "religie"
+      ]
+    }
+  ],
+  "summary" : "Istoricul Damian Anfile îl conduce pe Sorin Constantinescu într-un tur de peste o oră și jumătate prin Centrul Vechi al Bucureștiului, pornind de la Curtea Veche, unde orașul este atestat documentar în 1459, și ocolind întâi limitele zonei, apoi străzile din interior. Turul explică de ce străzile poartă numele breslelor (Lipscani, Covaci, Șelari, Șepcari, Băcani), cum hanurile au devenit hoteluri și bănci, și cum Dâmbovița, cutremurele, incendiul din 1847 și sistematizările din secolele XIX–XX au schimbat zona. Printre curiozități: cea mai veche biserică din oraș, prima cafenea (1667, înaintea Vienei), prima tipografie de muzică psaltică din lume, prima școală superioară (Academia de la Sfântul Sava, 1695), primul pasaj pietonal (Macca-Villacrosse, 1891), legenda mititeilor de pe strada Covaci și originea expresiei „burtă verde”. Ghidul atrage atenția și asupra fațadelor degradate și a riscului seismic din zona cluburilor."
+}

@@ -8,11 +8,18 @@ struct PlaceStoriesView: View {
 
     @State private var items: [FeedItem]?
     @State private var errorMessage: String?
+    @State private var kindFilter: StoryKind?
 
     var body: some View {
         StoryCover {
             if let items {
-                StoryFeedView(items: items, showsSaveButton: hasStories)
+                StoryFeedView(items: filtered(items), showsSaveButton: hasStories)
+                    .overlay(alignment: .topLeading) {
+                        let kinds = availableKinds(in: items)
+                        if kinds.count > 1 {
+                            KindFilterBar(kinds: kinds, selection: $kindFilter)
+                        }
+                    }
             } else if let errorMessage {
                 ContentUnavailableView {
                     Label("Nu am putut încărca povestea", systemImage: "exclamationmark.triangle")
@@ -35,6 +42,16 @@ struct PlaceStoriesView: View {
         items?.first?.story.id != place.id
     }
 
+    private func filtered(_ items: [FeedItem]) -> [FeedItem] {
+        guard let kindFilter else { return items }
+        return items.filter { ($0.story.kind ?? .history) == kindFilter }
+    }
+
+    private func availableKinds(in items: [FeedItem]) -> [StoryKind] {
+        let present = Set(items.map { $0.story.kind ?? .history })
+        return StoryKind.allCases.filter(present.contains)
+    }
+
     private func load() async {
         errorMessage = nil
         do {
@@ -50,6 +67,48 @@ struct PlaceStoriesView: View {
         } catch {
             errorMessage = error.localizedDescription
         }
+    }
+}
+
+/// Filtrul după tipul poveștii: istorie, curiozități, bârfe, etimologie etc.
+private struct KindFilterBar: View {
+    let kinds: [StoryKind]
+    @Binding var selection: StoryKind?
+
+    var body: some View {
+        ScrollView(.horizontal) {
+            GlassEffectContainer(spacing: 8) {
+                HStack(spacing: 8) {
+                    chip(title: "Toate", symbol: "square.grid.2x2.fill", color: .white, kind: nil)
+                    ForEach(kinds, id: \.self) { kind in
+                        chip(title: kind.filterTitle, symbol: kind.symbol, color: kind.color, kind: kind)
+                    }
+                }
+            }
+            .padding(.leading, 16)
+            .padding(.trailing, 72)
+            .padding(.vertical, 8)
+        }
+        .scrollIndicators(.hidden)
+        .padding(.top, 8)
+    }
+
+    private func chip(title: String, symbol: String, color: Color, kind: StoryKind?) -> some View {
+        let isSelected = selection == kind
+        return Button {
+            withAnimation(.snappy) { selection = kind }
+        } label: {
+            Label(title, systemImage: symbol)
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(.white)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 8)
+                .glassEffect(
+                    isSelected ? .regular.tint(color.opacity(0.7)).interactive() : .clear.interactive(),
+                    in: Capsule()
+                )
+        }
+        .buttonStyle(.plain)
     }
 }
 

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct StoryMediaView: View {
     let video: StoryVideo?
+    var audioURL: String? = nil
     let category: PlaceCategory
     let isActive: Bool
     let api: APIClient
@@ -27,6 +28,11 @@ struct StoryMediaView: View {
             }
         case nil:
             placeholder
+                .overlay {
+                    if let url = api.resolve(audioURL) {
+                        NarrationPlayer(url: url, isActive: isActive)
+                    }
+                }
         }
     }
 

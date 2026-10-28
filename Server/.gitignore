@@ -3,3 +3,7 @@
 *.sqlite
 Public/videos/*
 !Public/videos/.gitkeep
+Public/audio/*
+!Public/audio/.gitkeep
+# Modele Whisper (~1.6 GB)
+/models/

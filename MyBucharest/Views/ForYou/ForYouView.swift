@@ -41,8 +41,9 @@ struct ForYouView: View {
             header
         }
         .preferredColorScheme(router.selectedTab == .forYou ? .dark : nil)
-        .task {
-            if store.feed.isEmpty { await reload() }
+        // Reîncarcă o dată când sosește prima locație, ca feed-ul să fie sortat după apropiere.
+        .task(id: location.location != nil) {
+            await reload()
         }
     }
 

@@ -11,13 +11,20 @@ struct StoryPage: View {
     @Environment(ProfileStore.self) private var profile
     @Environment(AppRouter.self) private var router
     @State private var isExpanded = false
+    @State private var isShowingCredits = false
 
     private var place: PlaceSummary { item.place }
     private var story: Story { item.story }
 
     var body: some View {
         ZStack(alignment: .bottom) {
-            StoryMediaView(video: story.video, category: place.category, isActive: isActive, api: store.api)
+            StoryMediaView(
+                video: story.video,
+                audioURL: story.audioURL,
+                category: place.category,
+                isActive: isActive,
+                api: store.api
+            )
 
             LinearGradient(
                 colors: [.clear, .black.opacity(0.35), .black.opacity(0.9)],
@@ -39,11 +46,17 @@ struct StoryPage: View {
 
     private var caption: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Label(place.name, systemImage: place.category.symbol)
-                .font(.subheadline.weight(.semibold))
-                .padding(.horizontal, 10)
-                .padding(.vertical, 6)
-                .background(place.category.color.opacity(0.85), in: Capsule())
+            HStack(spacing: 8) {
+                Label(place.name, systemImage: place.category.symbol)
+                    .font(.subheadline.weight(.semibold))
+                    .lineLimit(1)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 6)
+                    .background(place.category.color.opacity(0.85), in: Capsule())
+                if let kind = story.kind {
+                    StoryKindBadge(kind: kind)
+                }
+            }
 
             Text(story.title)
                 .font(.title2.bold())
@@ -71,9 +84,35 @@ struct StoryPage: View {
             if let source = story.source, let channel = source.channel ?? source.title {
                 sourceView(channel: channel, url: source.url.flatMap(URL.init(string:)))
             }
+
+            mediaDisclosure
         }
         .foregroundStyle(.white)
         .frame(maxWidth: .infinity, alignment: .leading)
+        .sheet(isPresented: $isShowingCredits) {
+            CreditsSheet(credits: story.credits ?? [])
+                .presentationDetents([.medium, .large])
+        }
+    }
+
+    @ViewBuilder
+    private var mediaDisclosure: some View {
+        let credits = story.credits ?? []
+        if story.aiVoice == true || !credits.isEmpty {
+            HStack(spacing: 12) {
+                if story.aiVoice == true {
+                    Label("Voce generată cu AI", systemImage: "waveform")
+                }
+                if !credits.isEmpty {
+                    Button { isShowingCredits = true } label: {
+                        Label("Foto: Wikimedia Commons", systemImage: "photo.on.rectangle")
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+            .font(.caption2)
+            .foregroundStyle(.white.opacity(0.75))
+        }
     }
 
     private var actionRail: some View {

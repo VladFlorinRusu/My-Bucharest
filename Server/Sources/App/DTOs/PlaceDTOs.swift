@@ -15,6 +15,8 @@ struct SourceDTO: Content {
     var url: String?
 }
 
+extension MediaCredit: Content {}
+
 struct StoryDTO: Content {
     var id: UUID
     var title: String
@@ -22,6 +24,10 @@ struct StoryDTO: Content {
     var personalities: [String]
     var video: VideoDTO?
     var source: SourceDTO?
+    var audioURL: String?
+    var aiVoice: Bool
+    var credits: [MediaCredit]
+    var kind: StoryKind
 }
 
 struct PlaceSummaryDTO: Content {
@@ -57,6 +63,7 @@ struct StoryInput: Content {
     var personalities: [String]?
     var video: VideoDTO?
     var source: SourceDTO?
+    var kind: StoryKind?
 }
 
 struct PlaceInput: Content {
@@ -85,7 +92,11 @@ extension Story {
             body: body,
             personalities: personalities,
             video: video,
-            source: hasSource ? SourceDTO(title: sourceTitle, channel: sourceChannel, url: sourceURL) : nil
+            source: hasSource ? SourceDTO(title: sourceTitle, channel: sourceChannel, url: sourceURL) : nil,
+            audioURL: audioURL,
+            aiVoice: aiVoice ?? false,
+            credits: mediaCredits ?? [],
+            kind: kind ?? .history
         )
     }
 
@@ -101,6 +112,7 @@ extension Story {
         sourceTitle = input.source?.title
         sourceChannel = input.source?.channel
         sourceURL = input.source?.url
+        kind = input.kind
     }
 }
 

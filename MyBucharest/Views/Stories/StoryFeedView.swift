@@ -42,9 +42,8 @@ struct StoryFeedView: View {
                 activeItemID = initialItemID ?? items.first?.id
             }
         }
-        .onChange(of: items) { _, newItems in
-            if let activeItemID, newItems.contains(where: { $0.id == activeItemID }) { return }
-            activeItemID = newItems.first?.id
+        .onChange(of: items.map(\.id)) { _, newIDs in
+            activeItemID = newIDs.first
         }
     }
 }
