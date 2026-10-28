@@ -19,9 +19,16 @@ final class AppRouter {
     /// Locul lângă care tocmai a ajuns utilizatorul; afișat ca banner pe hartă.
     var nearbyPlace: PlaceSummary?
     private(set) var mapFocus: MapFocus?
+    /// Loc de deschis cu poveștile lui (de exemplu din notificare); MapScreen îl prezintă.
+    var placeToOpen: PlaceSummary?
 
     func showOnMap(_ place: PlaceSummary) {
         mapFocus = MapFocus(place: place)
         selectedTab = .map
+    }
+
+    func open(_ place: PlaceSummary) {
+        selectedTab = .map
+        placeToOpen = place
     }
 }

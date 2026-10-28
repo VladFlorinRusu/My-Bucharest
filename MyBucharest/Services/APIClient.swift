@@ -2,7 +2,7 @@ import CoreLocation
 import Foundation
 
 struct APIClient {
-    var baseURL: URL = AppConfig.apiBaseURL
+    var baseURL: URL { AppConfig.apiBaseURL }
     var session: URLSession = .shared
 
     enum APIError: LocalizedError {

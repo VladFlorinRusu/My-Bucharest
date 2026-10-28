@@ -5,6 +5,7 @@ import SwiftUI
 struct NarrationPlayer: View {
     let url: URL
     let isActive: Bool
+    var rate: Float = 1
 
     @State private var player: AVPlayer?
     @State private var isPlaying = false
@@ -20,6 +21,7 @@ struct NarrationPlayer: View {
                 update()
             }
             .onChange(of: isActive) { update() }
+            .onChange(of: rate) { update() }
             .onDisappear {
                 player?.pause()
                 isPlaying = false
@@ -31,11 +33,12 @@ struct NarrationPlayer: View {
 
     private func update() {
         guard let player else { return }
+        player.defaultRate = rate
         if isActive {
             if let item = player.currentItem, item.currentTime() >= item.duration {
                 player.seek(to: .zero)
             }
-            player.play()
+            player.rate = rate
         } else {
             player.pause()
         }

@@ -14,10 +14,13 @@ struct MyBucharestApp: App {
     @State private var store = PlacesStore()
     @State private var profile = ProfileStore()
     @State private var location = LocationService()
+    private let geofence = GeofenceService.shared
 
     init() {
         // Sunetul clipurilor se aude și când telefonul e pe silențios, ca în TikTok/Reels.
         try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .moviePlayback)
+        // Rulează și când iOS pornește aplicația în fundal pentru o zonă sau o deplasare.
+        GeofenceService.shared.resume()
     }
 
     var body: some Scene {
@@ -27,6 +30,7 @@ struct MyBucharestApp: App {
                 .environment(store)
                 .environment(profile)
                 .environment(location)
+                .environment(geofence)
         }
     }
 }

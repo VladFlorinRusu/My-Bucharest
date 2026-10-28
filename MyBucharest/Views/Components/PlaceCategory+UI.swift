@@ -44,16 +44,51 @@ extension PlaceCategory {
 struct PlacePin: View {
     let category: PlaceCategory
     var isHighlighted = false
+    /// Locurile din raza de proximitate sar și emit unde, ca să le vezi imediat pe hartă.
+    var isNearby = false
 
     var body: some View {
-        Image(systemName: category.symbol)
-            .font(.system(size: 14, weight: .bold))
-            .foregroundStyle(.white)
+        ZStack {
+            if isNearby {
+                PulseRing(color: category.color)
+            }
+            Image(systemName: category.symbol)
+                .font(.system(size: 14, weight: .bold))
+                .foregroundStyle(.white)
+                .frame(width: 34, height: 34)
+                .background(category.color.gradient, in: Circle())
+                .overlay(Circle().stroke(.white, lineWidth: 2))
+                .shadow(color: .black.opacity(0.25), radius: 4, y: 2)
+                .phaseAnimator(isNearby ? [0.0, -8.0] : [0.0]) { pin, offset in
+                    pin.offset(y: offset)
+                } animation: { _ in
+                    .easeInOut(duration: 0.55)
+                }
+        }
+        .scaleEffect(isHighlighted || isNearby ? 1.2 : 1)
+        .animation(.spring(duration: 0.3), value: isHighlighted || isNearby)
+    }
+}
+
+private struct PulseRing: View {
+    let color: Color
+    @State private var isExpanded = false
+
+    var body: some View {
+        ZStack {
+            ring(delay: 0)
+            ring(delay: 0.7)
+        }
+        .allowsHitTesting(false)
+        .onAppear { isExpanded = true }
+    }
+
+    private func ring(delay: Double) -> some View {
+        Circle()
+            .stroke(color, lineWidth: 3)
             .frame(width: 34, height: 34)
-            .background(category.color.gradient, in: Circle())
-            .overlay(Circle().stroke(.white, lineWidth: 2))
-            .shadow(color: .black.opacity(0.25), radius: 4, y: 2)
-            .scaleEffect(isHighlighted ? 1.25 : 1)
-            .animation(.spring(duration: 0.3), value: isHighlighted)
+            .scaleEffect(isExpanded ? 2.6 : 1)
+            .opacity(isExpanded ? 0 : 0.9)
+            .animation(.easeOut(duration: 1.4).repeatForever(autoreverses: false).delay(delay), value: isExpanded)
     }
 }

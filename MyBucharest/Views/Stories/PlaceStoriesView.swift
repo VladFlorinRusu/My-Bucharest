@@ -127,11 +127,13 @@ struct StoryCover<Content: View>: View {
                     .font(.headline)
                     .foregroundStyle(.white)
                     .frame(width: 44, height: 44)
-                    .glassEffect(.clear.interactive(), in: Circle())
+                    .glassEffect(.regular.interactive(), in: Circle())
+                    .contentShape(Circle())
             }
             .buttonStyle(.plain)
             .accessibilityLabel("Închide")
             .padding()
+            .zIndex(1)
         }
         .statusBarHidden()
     }

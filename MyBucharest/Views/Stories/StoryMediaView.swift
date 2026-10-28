@@ -5,13 +5,14 @@ struct StoryMediaView: View {
     var audioURL: String? = nil
     let category: PlaceCategory
     let isActive: Bool
+    var rate: Float = 1
     let api: APIClient
 
     var body: some View {
         switch video?.kind {
         case .hosted:
             if let url = api.resolve(video?.url) {
-                LoopingVideoPlayer(url: url, isActive: isActive)
+                LoopingVideoPlayer(url: url, isActive: isActive, rate: rate)
             } else {
                 placeholder
             }
@@ -21,7 +22,8 @@ struct StoryMediaView: View {
                     videoID: id,
                     startSeconds: video?.startSeconds,
                     endSeconds: video?.endSeconds,
-                    isActive: isActive
+                    isActive: isActive,
+                    rate: rate
                 )
             } else {
                 placeholder
@@ -30,7 +32,7 @@ struct StoryMediaView: View {
             placeholder
                 .overlay {
                     if let url = api.resolve(audioURL) {
-                        NarrationPlayer(url: url, isActive: isActive)
+                        NarrationPlayer(url: url, isActive: isActive, rate: rate)
                     }
                 }
         }

@@ -395,9 +395,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9XBY2BH5D4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "MyBucharest se conectează la serverul de dezvoltare din rețeaua locală.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Cu acces „Întotdeauna”, MyBucharest te poate anunța când treci pe lângă un monument, chiar dacă aplicația e închisă.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Îți folosim locația ca să-ți arătăm curiozitățile din jurul tău și să te anunțăm când ajungi lângă un loc.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -428,9 +430,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9XBY2BH5D4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "MyBucharest se conectează la serverul de dezvoltare din rețeaua locală.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Cu acces „Întotdeauna”, MyBucharest te poate anunța când treci pe lângă un monument, chiar dacă aplicația e închisă.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Îți folosim locația ca să-ți arătăm curiozitățile din jurul tău și să te anunțăm când ajungi lângă un loc.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

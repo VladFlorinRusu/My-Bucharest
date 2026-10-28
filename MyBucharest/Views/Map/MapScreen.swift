@@ -4,6 +4,8 @@ import SwiftUI
 struct MapScreen: View {
     @Environment(PlacesStore.self) private var store
     @Environment(AppRouter.self) private var router
+    @Environment(LocationService.self) private var location
+    @AppStorage(AppConfig.proximityRadiusKey) private var proximityRadius = AppConfig.defaultProximityRadius
 
     @State private var camera: MapCameraPosition = .region(
         MKCoordinateRegion(
@@ -27,10 +29,19 @@ struct MapScreen: View {
 
     var body: some View {
         Map(position: $camera, selection: $selectedPlaceID) {
+            if let userCoordinate = location.location?.coordinate {
+                MapCircle(center: userCoordinate, radius: proximityRadius)
+                    .foregroundStyle(.blue.opacity(0.08))
+                    .stroke(.blue.opacity(0.35), lineWidth: 1)
+            }
             UserAnnotation()
             ForEach(visiblePlaces) { place in
                 Annotation(place.name, coordinate: place.coordinate, anchor: .center) {
-                    PlacePin(category: place.category, isHighlighted: router.nearbyPlace?.id == place.id)
+                    PlacePin(
+                        category: place.category,
+                        isHighlighted: router.nearbyPlace?.id == place.id,
+                        isNearby: store.nearbyPlaceIDs.contains(place.id)
+                    )
                 }
                 .tag(place.id)
             }
@@ -47,7 +58,7 @@ struct MapScreen: View {
         }
         .safeAreaInset(edge: .bottom) {
             if let nearbyPlace = router.nearbyPlace {
-                NearbyBanner(place: nearbyPlace) {
+                NearbyBanner(place: nearbyPlace, othersNearby: store.nearbyPlaceIDs.subtracting([nearbyPlace.id]).count) {
                     presentedPlace = nearbyPlace
                     router.nearbyPlace = nil
                 } onDismiss: {
@@ -65,6 +76,23 @@ struct MapScreen: View {
             guard let id, let place = store.places.first(where: { $0.id == id }) else { return }
             presentedPlace = place
             selectedPlaceID = nil
+        }
+        .onChange(of: router.nearbyPlace?.id) { _, id in
+            // La intrarea în raza unui loc nou, arătăm zona din jurul tău cu locurile care pulsează.
+            guard id != nil, let userCoordinate = location.location?.coordinate else { return }
+            let span = min(proximityRadius * 3.5, 25_000)
+            withAnimation(.smooth) {
+                camera = .region(MKCoordinateRegion(
+                    center: userCoordinate,
+                    latitudinalMeters: span,
+                    longitudinalMeters: span
+                ))
+            }
+        }
+        .onChange(of: router.placeToOpen, initial: true) { _, place in
+            guard let place else { return }
+            presentedPlace = place
+            router.placeToOpen = nil
         }
         .onChange(of: router.mapFocus, initial: true) { _, focus in
             guard let place = focus?.place else { return }
@@ -143,12 +171,13 @@ private struct CategoryFilterBar: View {
 
 private struct NearbyBanner: View {
     let place: PlaceSummary
+    var othersNearby = 0
     let onOpen: () -> Void
     let onDismiss: () -> Void
 
     var body: some View {
         HStack(spacing: 12) {
-            PlacePin(category: place.category)
+            PlacePin(category: place.category, isNearby: true)
             VStack(alignment: .leading, spacing: 2) {
                 Text("Ești lângă")
                     .font(.caption)
@@ -156,6 +185,11 @@ private struct NearbyBanner: View {
                 Text(place.name)
                     .font(.headline)
                     .lineLimit(1)
+                if othersNearby > 0 {
+                    Text(othersNearby == 1 ? "și încă un loc în apropiere" : "și încă \(othersNearby) locuri în apropiere")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
             }
             Spacer()
             Button("Vezi", action: onOpen)
@@ -178,4 +212,5 @@ private struct NearbyBanner: View {
     MapScreen()
         .environment(PlacesStore())
         .environment(AppRouter())
+        .environment(LocationService())
 }

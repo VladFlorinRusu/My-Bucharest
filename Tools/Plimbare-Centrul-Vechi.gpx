@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Traseu de test pentru notificările de proximitate: pornește de la ~600 m nord de Piața Universității
+  și coboară prin Centrul Vechi până la Hanul lui Manuc, cu câte un minut între puncte.
+  În Xcode: rulează aplicația pe iPhone, apoi Debug → Simulate Location → alege acest fișier.
+-->
+<gpx version="1.1" creator="MyBucharest" xmlns="http://www.topografix.com/GPX/1/1">
+  <wpt lat="44.44050" lon="26.09980"><name>Start (Bd. Magheru)</name><time>2026-10-28T20:00:00Z</time></wpt>
+  <wpt lat="44.43750" lon="26.10050"><name>Spre Universitate</name><time>2026-10-28T20:01:00Z</time></wpt>
+  <wpt lat="44.43500" lon="26.10090"><name>Piața Universității</name><time>2026-10-28T20:02:00Z</time></wpt>
+  <wpt lat="44.43340" lon="26.10050"><name>Strada Doamnei</name><time>2026-10-28T20:03:00Z</time></wpt>
+  <wpt lat="44.43230" lon="26.10090"><name>Strada Lipscani</name><time>2026-10-28T20:04:00Z</time></wpt>
+  <wpt lat="44.43100" lon="26.10150"><name>Strada Covaci</name><time>2026-10-28T20:05:00Z</time></wpt>
+  <wpt lat="44.43010" lon="26.10130"><name>Curtea Veche</name><time>2026-10-28T20:06:00Z</time></wpt>
+  <wpt lat="44.43070" lon="26.10030"><name>Hanul lui Manuc</name><time>2026-10-28T20:07:00Z</time></wpt>
+</gpx>

@@ -38,20 +38,53 @@ struct ForYouView: View {
                 .foregroundStyle(.white)
             }
 
-            header
+            VStack(spacing: 10) {
+                header
+                if router.selectedTab == .forYou, !store.feed.isEmpty, store.feedNeedsReordering(for: location.location) {
+                    reorderButton
+                        .transition(.move(edge: .top).combined(with: .opacity))
+                }
+            }
+            .animation(.snappy, value: store.feedNeedsReordering(for: location.location))
         }
         .preferredColorScheme(router.selectedTab == .forYou ? .dark : nil)
         // Reîncarcă o dată când sosește prima locație, ca feed-ul să fie sortat după apropiere.
         .task(id: location.location != nil) {
             await reload()
         }
+        // Când revii în tab după ce te-ai deplasat, cele mai apropiate povești trec din nou primele.
+        .onChange(of: router.selectedTab) { _, tab in
+            guard tab == .forYou, store.feedNeedsReordering(for: location.location) else { return }
+            Task { await reload() }
+        }
+    }
+
+    private var reorderButton: some View {
+        Button {
+            Task { await reload() }
+        } label: {
+            Label("Arată ce e lângă tine", systemImage: "location.fill")
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(.white)
+                .padding(.horizontal, 14)
+                .padding(.vertical, 8)
+                .glassEffect(.regular.tint(.blue.opacity(0.5)).interactive(), in: Capsule())
+        }
+        .buttonStyle(.plain)
     }
 
     private var header: some View {
         HStack {
-            Text("Pentru tine")
-                .font(.headline)
-                .foregroundStyle(.white)
+            VStack(alignment: .leading, spacing: 2) {
+                Text("Pentru tine")
+                    .font(.headline)
+                if store.feedLocation != nil {
+                    Text("Cele mai apropiate primele")
+                        .font(.caption)
+                        .opacity(0.75)
+                }
+            }
+            .foregroundStyle(.white)
             Spacer()
             Button {
                 Task { await reload() }
@@ -70,6 +103,6 @@ struct ForYouView: View {
     }
 
     private func reload() async {
-        await store.loadFeed(near: location.location?.coordinate)
+        await store.loadFeed(near: location.location)
     }
 }

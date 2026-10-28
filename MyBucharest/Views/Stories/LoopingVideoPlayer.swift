@@ -5,6 +5,7 @@ import SwiftUI
 struct LoopingVideoPlayer: UIViewRepresentable {
     let url: URL
     let isActive: Bool
+    var rate: Float = 1
 
     func makeCoordinator() -> Coordinator {
         Coordinator(url: url)
@@ -18,10 +19,12 @@ struct LoopingVideoPlayer: UIViewRepresentable {
     }
 
     func updateUIView(_ view: PlayerView, context: Context) {
+        let player = context.coordinator.player
+        player.defaultRate = rate
         if isActive {
-            context.coordinator.player.play()
+            if player.rate != rate { player.rate = rate }
         } else {
-            context.coordinator.player.pause()
+            player.pause()
         }
     }
 

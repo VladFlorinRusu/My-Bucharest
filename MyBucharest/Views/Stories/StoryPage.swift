@@ -1,3 +1,4 @@
+import CoreLocation
 import SwiftUI
 
 struct StoryPage: View {
@@ -10,11 +11,18 @@ struct StoryPage: View {
     @Environment(PlacesStore.self) private var store
     @Environment(ProfileStore.self) private var profile
     @Environment(AppRouter.self) private var router
+    @Environment(LocationService.self) private var location
+    @AppStorage(AppConfig.proximityRadiusKey) private var proximityRadius = AppConfig.defaultProximityRadius
     @State private var isExpanded = false
     @State private var isShowingCredits = false
+    @State private var isPaused = false
+    @GestureState private var isFastForwarding = false
 
     private var place: PlaceSummary { item.place }
     private var story: Story { item.story }
+
+    /// Ținutul apăsat redă cu 2× chiar dacă povestea era pe pauză.
+    private var isPlaying: Bool { isActive && (!isPaused || isFastForwarding) }
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -22,7 +30,8 @@ struct StoryPage: View {
                 video: story.video,
                 audioURL: story.audioURL,
                 category: place.category,
-                isActive: isActive,
+                isActive: isPlaying,
+                rate: isFastForwarding ? 2 : 1,
                 api: store.api
             )
 
@@ -33,6 +42,12 @@ struct StoryPage: View {
             )
             .allowsHitTesting(false)
 
+            Color.clear
+                .contentShape(Rectangle())
+                .gesture(playbackGesture)
+
+            playbackIndicators
+
             HStack(alignment: .bottom, spacing: 16) {
                 caption
                 actionRail
@@ -42,6 +57,54 @@ struct StoryPage: View {
             .padding(.bottom, safeAreaInsets.bottom + 20)
         }
         .clipped()
+        .sensoryFeedback(.impact(weight: .medium), trigger: isFastForwarding) { _, holding in holding }
+        .onChange(of: isActive) { _, active in
+            if !active { isPaused = false }
+        }
+    }
+
+    /// 37 m -> „chiar lângă tine”, 184 m -> „la 180 m de tine”, 2 350 m -> „la 2,4 km de tine”
+    static func formatDistance(_ meters: CLLocationDistance) -> String {
+        if meters < 50 { return "Chiar lângă tine" }
+        if meters < 10_000 { return "La \(Int(meters / 10) * 10) m de tine" }
+        let km = (meters / 1_000).formatted(.number.precision(.fractionLength(1)).locale(Locale(identifier: "ro_RO")))
+        return "La \(km) km de tine"
+    }
+
+    /// Atingere = pauză / redare; ținut apăsat = viteză 2× până ridici degetul.
+    private var playbackGesture: some Gesture {
+        LongPressGesture(minimumDuration: 0.3)
+            .sequenced(before: DragGesture(minimumDistance: 0))
+            .updating($isFastForwarding) { value, holding, _ in
+                if case .second(true, _) = value { holding = true }
+            }
+            .exclusively(before: TapGesture().onEnded {
+                withAnimation(.snappy) { isPaused.toggle() }
+            })
+    }
+
+    @ViewBuilder
+    private var playbackIndicators: some View {
+        if isPaused, !isFastForwarding {
+            Image(systemName: "play.fill")
+                .font(.system(size: 64))
+                .foregroundStyle(.white.opacity(0.85))
+                .shadow(radius: 12)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .allowsHitTesting(false)
+                .transition(.scale.combined(with: .opacity))
+        }
+        if isFastForwarding {
+            Label("2×", systemImage: "forward.fill")
+                .font(.headline)
+                .foregroundStyle(.white)
+                .padding(.horizontal, 14)
+                .padding(.vertical, 8)
+                .glassEffect(.regular, in: Capsule())
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                .padding(.top, safeAreaInsets.top + 64)
+                .allowsHitTesting(false)
+        }
     }
 
     private var caption: some View {
@@ -56,6 +119,12 @@ struct StoryPage: View {
                 if let kind = story.kind {
                     StoryKindBadge(kind: kind)
                 }
+            }
+
+            if let distance = location.location?.distance(from: place.location) {
+                Label(Self.formatDistance(distance), systemImage: distance <= proximityRadius ? "location.fill" : "location")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(distance <= proximityRadius ? .green : .white.opacity(0.85))
             }
 
             Text(story.title)
