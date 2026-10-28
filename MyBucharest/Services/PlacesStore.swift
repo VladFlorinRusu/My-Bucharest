@@ -8,6 +8,10 @@ final class PlacesStore {
     private(set) var isLoading = false
     private(set) var errorMessage: String?
 
+    private(set) var feed: [FeedItem] = []
+    private(set) var isLoadingFeed = false
+    private(set) var feedErrorMessage: String?
+
     let api: APIClient
     private var details: [UUID: PlaceDetail] = [:]
     private var announcedPlaceIDs: Set<UUID> = []
@@ -24,6 +28,17 @@ final class PlacesStore {
             errorMessage = nil
         } catch {
             errorMessage = error.localizedDescription
+        }
+    }
+
+    func loadFeed(near coordinate: CLLocationCoordinate2D?) async {
+        isLoadingFeed = true
+        defer { isLoadingFeed = false }
+        do {
+            feed = try await api.feed(near: coordinate)
+            feedErrorMessage = nil
+        } catch {
+            feedErrorMessage = error.localizedDescription
         }
     }
 

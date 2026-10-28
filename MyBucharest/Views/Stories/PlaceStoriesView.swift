@@ -1,22 +1,18 @@
 import SwiftUI
 
-/// Feed vertical, pe tot ecranul, cu poveștile unui loc – stil TikTok/Reels.
+/// Poveștile unui singur loc, deschise de pe hartă.
 struct PlaceStoriesView: View {
     let place: PlaceSummary
 
     @Environment(PlacesStore.self) private var store
-    @Environment(\.dismiss) private var dismiss
 
-    @State private var detail: PlaceDetail?
+    @State private var items: [FeedItem]?
     @State private var errorMessage: String?
-    @State private var activeStoryID: UUID?
 
     var body: some View {
-        ZStack(alignment: .topTrailing) {
-            Color.black.ignoresSafeArea()
-
-            if let detail {
-                feed(for: detail)
+        StoryCover {
+            if let items {
+                StoryFeedView(items: items, showsSaveButton: hasStories)
             } else if let errorMessage {
                 ContentUnavailableView {
                     Label("Nu am putut încărca povestea", systemImage: "exclamationmark.triangle")
@@ -31,51 +27,53 @@ struct PlaceStoriesView: View {
                 ProgressView().tint(.white)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-
-            Button { dismiss() } label: {
-                Image(systemName: "xmark")
-                    .font(.headline)
-                    .foregroundStyle(.white)
-                    .frame(width: 40, height: 40)
-                    .background(.ultraThinMaterial, in: Circle())
-            }
-            .accessibilityLabel("Închide")
-            .padding()
         }
-        .statusBarHidden()
         .task { await load() }
     }
 
-    @ViewBuilder
-    private func feed(for detail: PlaceDetail) -> some View {
-        if detail.stories.isEmpty {
-            StoryPage(place: detail, story: nil, isActive: true)
-        } else {
-            ScrollView(.vertical) {
-                LazyVStack(spacing: 0) {
-                    ForEach(detail.stories) { story in
-                        StoryPage(place: detail, story: story, isActive: activeStoryID == story.id)
-                            .containerRelativeFrame([.horizontal, .vertical])
-                            .id(story.id)
-                    }
-                }
-                .scrollTargetLayout()
-            }
-            .scrollTargetBehavior(.paging)
-            .scrollPosition(id: $activeStoryID)
-            .scrollIndicators(.hidden)
-            .ignoresSafeArea()
-        }
+    private var hasStories: Bool {
+        items?.first?.story.id != place.id
     }
 
     private func load() async {
         errorMessage = nil
         do {
-            let loaded = try await store.detail(for: place.id)
-            detail = loaded
-            activeStoryID = loaded.stories.first?.id
+            let detail = try await store.detail(for: place.id)
+            if detail.stories.isEmpty {
+                // Locul nu are încă povești: arătăm descrierea lui ca o singură pagină.
+                let intro = Story(id: place.id, title: detail.name, body: detail.summary,
+                                  personalities: [], video: nil, source: nil)
+                items = [FeedItem(place: place, story: intro)]
+            } else {
+                items = detail.stories.map { FeedItem(place: place, story: $0) }
+            }
         } catch {
             errorMessage = error.localizedDescription
         }
+    }
+}
+
+/// Container pe tot ecranul, cu fundal negru și buton de închidere.
+struct StoryCover<Content: View>: View {
+    @ViewBuilder let content: Content
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        ZStack(alignment: .topTrailing) {
+            Color.black.ignoresSafeArea()
+            content
+
+            Button { dismiss() } label: {
+                Image(systemName: "xmark")
+                    .font(.headline)
+                    .foregroundStyle(.white)
+                    .frame(width: 44, height: 44)
+                    .glassEffect(.clear.interactive(), in: Circle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("Închide")
+            .padding()
+        }
+        .statusBarHidden()
     }
 }

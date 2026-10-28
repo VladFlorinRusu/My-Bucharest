@@ -16,14 +16,11 @@ struct APIClient {
     }
 
     func places(near coordinate: CLLocationCoordinate2D? = nil) async throws -> [PlaceSummary] {
-        var query: [URLQueryItem] = []
-        if let coordinate {
-            query = [
-                URLQueryItem(name: "lat", value: String(coordinate.latitude)),
-                URLQueryItem(name: "lon", value: String(coordinate.longitude)),
-            ]
-        }
-        return try await get("api/v1/places", query: query)
+        try await get("api/v1/places", query: locationQuery(coordinate))
+    }
+
+    func feed(near coordinate: CLLocationCoordinate2D? = nil) async throws -> [FeedItem] {
+        try await get("api/v1/feed", query: locationQuery(coordinate))
     }
 
     func place(id: UUID) async throws -> PlaceDetail {
@@ -35,6 +32,14 @@ struct APIClient {
         guard let path, !path.isEmpty else { return nil }
         if let url = URL(string: path), url.scheme != nil { return url }
         return URL(string: path, relativeTo: baseURL)?.absoluteURL
+    }
+
+    private func locationQuery(_ coordinate: CLLocationCoordinate2D?) -> [URLQueryItem] {
+        guard let coordinate else { return [] }
+        return [
+            URLQueryItem(name: "lat", value: String(coordinate.latitude)),
+            URLQueryItem(name: "lon", value: String(coordinate.longitude)),
+        ]
     }
 
     private func get<T: Decodable>(_ path: String, query: [URLQueryItem] = []) async throws -> T {

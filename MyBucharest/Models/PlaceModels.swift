@@ -58,6 +58,14 @@ struct Story: Codable, Identifiable, Hashable {
     let source: StorySource?
 }
 
+/// O poveste împreună cu locul ei – unitatea afișată în feed-urile de reels.
+struct FeedItem: Codable, Identifiable, Hashable {
+    let place: PlaceSummary
+    let story: Story
+
+    var id: UUID { story.id }
+}
+
 struct StoryVideo: Codable, Hashable {
     enum Kind: String, Codable {
         case hosted

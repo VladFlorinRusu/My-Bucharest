@@ -10,7 +10,9 @@ import SwiftUI
 
 @main
 struct MyBucharestApp: App {
+    @State private var router = AppRouter()
     @State private var store = PlacesStore()
+    @State private var profile = ProfileStore()
     @State private var location = LocationService()
 
     init() {
@@ -20,8 +22,10 @@ struct MyBucharestApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MapScreen()
+            RootView()
+                .environment(router)
                 .environment(store)
+                .environment(profile)
                 .environment(location)
         }
     }

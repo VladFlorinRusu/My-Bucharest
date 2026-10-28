@@ -3,7 +3,7 @@ import SwiftUI
 
 struct MapScreen: View {
     @Environment(PlacesStore.self) private var store
-    @Environment(LocationService.self) private var location
+    @Environment(AppRouter.self) private var router
 
     @State private var camera: MapCameraPosition = .region(
         MKCoordinateRegion(
@@ -13,7 +13,6 @@ struct MapScreen: View {
     )
     @State private var selectedPlaceID: UUID?
     @State private var presentedPlace: PlaceSummary?
-    @State private var nearbyPlace: PlaceSummary?
     @State private var categoryFilter: PlaceCategory?
 
     private var visiblePlaces: [PlaceSummary] {
@@ -31,7 +30,7 @@ struct MapScreen: View {
             UserAnnotation()
             ForEach(visiblePlaces) { place in
                 Annotation(place.name, coordinate: place.coordinate, anchor: .center) {
-                    PlacePin(category: place.category, isHighlighted: nearbyPlace?.id == place.id)
+                    PlacePin(category: place.category, isHighlighted: router.nearbyPlace?.id == place.id)
                 }
                 .tag(place.id)
             }
@@ -47,12 +46,12 @@ struct MapScreen: View {
             }
         }
         .safeAreaInset(edge: .bottom) {
-            if let nearbyPlace {
+            if let nearbyPlace = router.nearbyPlace {
                 NearbyBanner(place: nearbyPlace) {
                     presentedPlace = nearbyPlace
-                    self.nearbyPlace = nil
+                    router.nearbyPlace = nil
                 } onDismiss: {
-                    withAnimation { self.nearbyPlace = nil }
+                    withAnimation { router.nearbyPlace = nil }
                 }
                 .transition(.move(edge: .bottom).combined(with: .opacity))
             }
@@ -67,18 +66,18 @@ struct MapScreen: View {
             presentedPlace = place
             selectedPlaceID = nil
         }
-        .onChange(of: location.location) { _, newLocation in
-            guard let newLocation, presentedPlace == nil,
-                  let place = store.claimNearbyPlace(for: newLocation) else { return }
-            withAnimation(.spring) { nearbyPlace = place }
-            UINotificationFeedbackGenerator().notificationOccurred(.success)
+        .onChange(of: router.mapFocus, initial: true) { _, focus in
+            guard let place = focus?.place else { return }
+            categoryFilter = nil
+            withAnimation(.smooth) {
+                camera = .region(MKCoordinateRegion(
+                    center: place.coordinate,
+                    span: MKCoordinateSpan(latitudeDelta: 0.006, longitudeDelta: 0.006)
+                ))
+            }
         }
         .fullScreenCover(item: $presentedPlace) { place in
             PlaceStoriesView(place: place)
-        }
-        .task {
-            location.start()
-            await store.loadPlaces()
         }
     }
 
@@ -109,14 +108,16 @@ private struct CategoryFilterBar: View {
 
     var body: some View {
         ScrollView(.horizontal) {
-            HStack(spacing: 8) {
-                chip(title: "Toate", symbol: "map.fill", color: .accentColor, isSelected: selection == nil) {
-                    selection = nil
-                }
-                ForEach(categories, id: \.self) { category in
-                    chip(title: category.title, symbol: category.symbol, color: category.color,
-                         isSelected: selection == category) {
-                        selection = selection == category ? nil : category
+            GlassEffectContainer(spacing: 8) {
+                HStack(spacing: 8) {
+                    chip(title: "Toate", symbol: "map.fill", color: .accentColor, isSelected: selection == nil) {
+                        selection = nil
+                    }
+                    ForEach(categories, id: \.self) { category in
+                        chip(title: category.title, symbol: category.symbol, color: category.color,
+                             isSelected: selection == category) {
+                            selection = selection == category ? nil : category
+                        }
                     }
                 }
             }
@@ -134,13 +135,7 @@ private struct CategoryFilterBar: View {
                 .padding(.horizontal, 12)
                 .padding(.vertical, 8)
                 .foregroundStyle(isSelected ? .white : .primary)
-                .background {
-                    if isSelected {
-                        Capsule().fill(color.gradient)
-                    } else {
-                        Capsule().fill(.regularMaterial)
-                    }
-                }
+                .glassEffect(isSelected ? .regular.tint(color).interactive() : .regular.interactive(), in: Capsule())
         }
         .buttonStyle(.plain)
     }
@@ -173,7 +168,7 @@ private struct NearbyBanner: View {
             .accessibilityLabel("Închide")
         }
         .padding(14)
-        .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 20))
+        .glassEffect(.regular, in: RoundedRectangle(cornerRadius: 24))
         .padding(.horizontal)
         .padding(.bottom, 8)
     }
@@ -182,5 +177,5 @@ private struct NearbyBanner: View {
 #Preview {
     MapScreen()
         .environment(PlacesStore())
-        .environment(LocationService())
+        .environment(AppRouter())
 }

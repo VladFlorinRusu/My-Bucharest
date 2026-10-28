@@ -45,6 +45,18 @@ struct AppTests {
         }
     }
 
+    @Test("Feed-ul pune întâi poveștile din apropiere și respectă limita")
+    func feed() async throws {
+        try await withApp { app in
+            try await app.testing().test(.GET, "api/v1/feed?lat=44.4672&lon=26.0781&limit=3") { res async throws in
+                #expect(res.status == .ok)
+                let items = try res.content.decode([FeedItemDTO].self)
+                #expect(items.count == 3)
+                #expect(items.first?.place.name == "Arcul de Triumf")
+            }
+        }
+    }
+
     @Test("Rutele de admin cer token")
     func adminRequiresToken() async throws {
         try await withApp { app in
