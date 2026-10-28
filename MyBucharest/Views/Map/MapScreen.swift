@@ -163,7 +163,8 @@ private struct CategoryFilterBar: View {
                 .padding(.horizontal, 12)
                 .padding(.vertical, 8)
                 .foregroundStyle(isSelected ? .white : .primary)
-                .glassEffect(isSelected ? .regular.tint(color).interactive() : .regular.interactive(), in: Capsule())
+                .glassEffect(isSelected ? .regular.tint(color) : .regular, in: Capsule())
+                .contentShape(Capsule())
         }
         .buttonStyle(.plain)
     }

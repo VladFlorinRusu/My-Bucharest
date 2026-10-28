@@ -8,6 +8,7 @@ struct ProfileView: View {
 
     @State private var presentedSavedStory: FeedItem?
     @State private var isConfirmingReset = false
+    @State private var isShowingAllDiscovered = false
 
     var body: some View {
         NavigationStack {
@@ -27,16 +28,20 @@ struct ProfileView: View {
                                 row(title: item.story.title, subtitle: item.place.name, category: item.place.category)
                             }
                             .buttonStyle(.plain)
+                            .accessibilityIdentifier("profile.savedStory")
                         }
                         .onDelete(perform: profile.removeSaved)
                     }
                 }
 
+                ProximityRadiusSection()
+                
                 Section("Locuri descoperite") {
                     if profile.discoveredPlaces.isEmpty {
                         emptyRow("Plimbă-te prin oraș: un loc apare aici când ajungi lângă el.")
                     } else {
-                        ForEach(profile.discoveredPlaces) { discovered in
+                        let discoveredToShow = isShowingAllDiscovered ? profile.discoveredPlaces : Array(profile.discoveredPlaces.prefix(10))
+                        ForEach(discoveredToShow) { discovered in
                             Button { router.showOnMap(discovered.place) } label: {
                                 row(
                                     title: discovered.place.name,
@@ -46,10 +51,12 @@ struct ProfileView: View {
                             }
                             .buttonStyle(.plain)
                         }
+                        if profile.discoveredPlaces.count > 10 && !isShowingAllDiscovered {
+                            Button("Afișează mai multe") { isShowingAllDiscovered = true }
+                                .buttonStyle(.plain)
+                        }
                     }
                 }
-
-                ProximityRadiusSection()
 
                 BackgroundAlertsSection()
 

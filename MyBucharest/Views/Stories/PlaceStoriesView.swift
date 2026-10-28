@@ -103,10 +103,8 @@ private struct KindFilterBar: View {
                 .foregroundStyle(.white)
                 .padding(.horizontal, 12)
                 .padding(.vertical, 8)
-                .glassEffect(
-                    isSelected ? .regular.tint(color.opacity(0.7)).interactive() : .clear.interactive(),
-                    in: Capsule()
-                )
+                .glassEffect(isSelected ? .regular.tint(color.opacity(0.7)) : .clear, in: Capsule())
+                .contentShape(Capsule())
         }
         .buttonStyle(.plain)
     }
@@ -127,7 +125,7 @@ struct StoryCover<Content: View>: View {
                     .font(.headline)
                     .foregroundStyle(.white)
                     .frame(width: 44, height: 44)
-                    .glassEffect(.regular.interactive(), in: Circle())
+                    .glassEffect(.regular, in: Circle())
                     .contentShape(Circle())
             }
             .buttonStyle(.plain)

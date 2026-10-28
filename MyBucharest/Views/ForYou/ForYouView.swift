@@ -68,7 +68,8 @@ struct ForYouView: View {
                 .foregroundStyle(.white)
                 .padding(.horizontal, 14)
                 .padding(.vertical, 8)
-                .glassEffect(.regular.tint(.blue.opacity(0.5)).interactive(), in: Capsule())
+                .glassEffect(.regular.tint(.blue.opacity(0.5)), in: Capsule())
+                .contentShape(Capsule())
         }
         .buttonStyle(.plain)
     }
@@ -93,7 +94,8 @@ struct ForYouView: View {
                     .font(.headline)
                     .foregroundStyle(.white)
                     .frame(width: 40, height: 40)
-                    .glassEffect(.clear.interactive(), in: Circle())
+                    .glassEffect(.clear, in: Circle())
+                    .contentShape(Circle())
             }
             .buttonStyle(.plain)
             .accessibilityLabel("Reîncarcă")

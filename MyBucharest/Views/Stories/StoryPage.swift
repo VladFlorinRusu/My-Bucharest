@@ -210,13 +210,15 @@ struct StoryPage: View {
                 Image(systemName: systemImage)
                     .font(.title2)
                     .frame(width: 48, height: 48)
-                    .glassEffect(.clear.interactive(), in: Circle())
+                    .glassEffect(.clear, in: Circle())
                 Text(title)
                     .font(.caption2.weight(.semibold))
             }
             .foregroundStyle(.white)
+            .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
+        .accessibilityLabel(title)
     }
 
     @ViewBuilder
