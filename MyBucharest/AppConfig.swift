@@ -9,7 +9,7 @@ enum AppConfig {
     #if targetEnvironment(simulator)
     static let defaultServerURL = "http://127.0.0.1:8080"
     #else
-    static let defaultServerURL = "http://192.168.0.85:8080"
+    static let defaultServerURL = "http://192.168.1.136:8080"
     #endif
 
     /// Adresa setată din Profil are prioritate față de cea implicită.

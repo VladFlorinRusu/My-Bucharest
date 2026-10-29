@@ -21,6 +21,9 @@ struct MakeReelCommand: AsyncCommand {
         @Flag(name: "audio-only", help: "Generează doar vocea, fără video")
         var audioOnly: Bool
 
+        @Flag(name: "thumbnails", help: "Doar miniaturile lipsă pentru reels-urile deja generate")
+        var thumbnailsOnly: Bool
+
         init() {}
     }
 
@@ -37,6 +40,15 @@ struct MakeReelCommand: AsyncCommand {
             throw Abort(.internalServerError, reason: "Lipsește \(tool). Pe macOS: brew install ffmpeg")
         }
 
+        let publicDirectory = URL(fileURLWithPath: app.directory.publicDirectory)
+        let thumbnailDirectory = publicDirectory.appendingPathComponent("thumbnails")
+        try FileManager.default.createDirectory(at: thumbnailDirectory, withIntermediateDirectories: true)
+
+        if signature.thumbnailsOnly {
+            try await backfillThumbnails(in: publicDirectory, thumbnails: thumbnailDirectory, on: db, console: console)
+            return
+        }
+
         let speech = try SpeechSynthesizers.fromEnvironment(client: app.client)
         let photos = WikimediaPhotos(
             client: app.client,
@@ -51,7 +63,6 @@ struct MakeReelCommand: AsyncCommand {
         }
         console.info("Procesez \(targets.count) povești…")
 
-        let publicDirectory = URL(fileURLWithPath: app.directory.publicDirectory)
         let audioDirectory = publicDirectory.appendingPathComponent("audio")
         let videoDirectory = publicDirectory.appendingPathComponent("videos")
         let workDirectory = FileManager.default.temporaryDirectory
@@ -97,11 +108,12 @@ struct MakeReelCommand: AsyncCommand {
                         let used = Array(ordered.prefix(ReelRenderer.photoCount(available: ordered.count, duration: duration)))
 
                         let videoName = "\(storyID.uuidString.lowercased()).mp4"
-                        try ReelRenderer.render(
-                            photos: used.map(\.file),
-                            audio: audioFile,
-                            output: videoDirectory.appendingPathComponent(videoName)
-                        )
+                        let videoFile = videoDirectory.appendingPathComponent(videoName)
+                        try ReelRenderer.render(photos: used.map(\.file), audio: audioFile, output: videoFile)
+
+                        let thumbnailName = "\(storyID.uuidString.lowercased()).jpg"
+                        try ReelRenderer.extractThumbnail(from: videoFile, to: thumbnailDirectory.appendingPathComponent(thumbnailName))
+                        story.thumbnailURL = "/thumbnails/\(thumbnailName)"
                         story.videoKind = .hosted
                         story.videoURL = "/videos/\(videoName)"
                         story.youtubeID = nil
@@ -120,6 +132,33 @@ struct MakeReelCommand: AsyncCommand {
         }
 
         console.info("Finalizat: \(done)/\(targets.count) povești.")
+    }
+
+    private func backfillThumbnails(
+        in publicDirectory: URL,
+        thumbnails: URL,
+        on db: any Database,
+        console: any Console
+    ) async throws {
+        let stories = try await Story.query(on: db)
+            .filter(\.$videoKind == .hosted)
+            .filter(\.$thumbnailURL == nil)
+            .all()
+        var done = 0
+        for story in stories {
+            guard let videoPath = story.videoURL else { continue }
+            let video = publicDirectory.appendingPathComponent(videoPath)
+            guard FileManager.default.fileExists(atPath: video.path) else {
+                console.warning("  ✗ \(story.title): lipsește \(videoPath)")
+                continue
+            }
+            let name = "\(try story.requireID().uuidString.lowercased()).jpg"
+            try ReelRenderer.extractThumbnail(from: video, to: thumbnails.appendingPathComponent(name))
+            story.thumbnailURL = "/thumbnails/\(name)"
+            try await story.save(on: db)
+            done += 1
+        }
+        console.success("Miniaturi generate: \(done)/\(stories.count).")
     }
 
     private func selectStories(signature: Signature, on db: any Database) async throws -> [Story] {

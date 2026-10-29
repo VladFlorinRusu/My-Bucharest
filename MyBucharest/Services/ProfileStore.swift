@@ -9,10 +9,15 @@ struct DiscoveredPlace: Codable, Identifiable, Hashable {
 }
 
 /// Progresul local al utilizatorului: povești salvate și locuri descoperite pe teren.
+///
+/// Poveștile salvate se țin pe telefon ca listă de ID-uri, în ordinea salvării, plus o copie a
+/// conținutului pentru afișare offline. La deschiderea ecranului „Salvate”, copia se
+/// reîmprospătează de la server (`refreshSaved`), ca să reflecte editările făcute între timp.
 @Observable
 final class ProfileStore {
     private(set) var savedStories: [FeedItem] = []
     private(set) var discoveredPlaces: [DiscoveredPlace] = []
+    private(set) var isRefreshingSaved = false
 
     private let defaults: UserDefaults
     private static let savedKey = "profile.savedStories"
@@ -37,10 +42,22 @@ final class ProfileStore {
         write(savedStories, key: Self.savedKey)
     }
 
-    func removeSaved(at offsets: IndexSet) {
-        for index in offsets.sorted(by: >) {
-            savedStories.remove(at: index)
-        }
+    func removeSaved(_ storyID: UUID) {
+        savedStories.removeAll { $0.id == storyID }
+        write(savedStories, key: Self.savedKey)
+    }
+
+    /// Cere de la server versiunea actuală a poveștilor salvate. Cele care nu mai vin
+    /// (nepublicate sau fără conexiune) rămân afișate din copia locală.
+    func refreshSaved(using api: APIClient) async {
+        guard !savedStories.isEmpty, !isRefreshingSaved else { return }
+        isRefreshingSaved = true
+        defer { isRefreshingSaved = false }
+
+        guard let fresh = try? await api.stories(ids: savedStories.map(\.id)) else { return }
+        let byID = Dictionary(fresh.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
+        // Între timp utilizatorul poate fi salvat sau scos ceva; păstrăm lista curentă.
+        savedStories = savedStories.map { byID[$0.id] ?? $0 }
         write(savedStories, key: Self.savedKey)
     }
 

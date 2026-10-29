@@ -23,6 +23,13 @@ struct APIClient {
         try await get("api/v1/feed", query: locationQuery(coordinate))
     }
 
+    /// Poveștile după ID (de exemplu cele salvate), în ordinea cerută.
+    func stories(ids: [UUID]) async throws -> [FeedItem] {
+        guard !ids.isEmpty else { return [] }
+        let joined = ids.map(\.uuidString).joined(separator: ",")
+        return try await get("api/v1/stories", query: [URLQueryItem(name: "ids", value: joined)])
+    }
+
     func place(id: UUID) async throws -> PlaceDetail {
         try await get("api/v1/places/\(id.uuidString)")
     }

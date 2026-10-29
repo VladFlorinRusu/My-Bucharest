@@ -35,6 +35,16 @@ enum ReelRenderer {
         return duration
     }
 
+    /// Un cadru din reel, ca miniatură verticală pentru lista de povești salvate.
+    static func extractThumbnail(from video: URL, to output: URL) throws {
+        try ProcessRunner.run("ffmpeg", [
+            "-y", "-loglevel", "error", "-nostats",
+            "-ss", "1.5", "-i", video.path,
+            "-frames:v", "1", "-vf", "scale=540:-2", "-q:v", "4",
+            output.path,
+        ])
+    }
+
     /// Convertește vocea în AAC mono, cu volum normalizat pentru telefon.
     static func normalizeAudio(_ input: URL, to output: URL) throws {
         try ProcessRunner.run("ffmpeg", [

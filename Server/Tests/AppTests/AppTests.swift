@@ -154,6 +154,24 @@ struct AppTests {
         #expect(Timecode.firstYear(in: "perioada interbelică") == nil)
     }
 
+    @Test("Poveștile salvate vin după ID, în ordinea cerută, cu miniatura YouTube")
+    func storiesByIDs() async throws {
+        try await withApp { app in
+            let stories = try await Story.query(on: app.db).sort(\.$title).limit(2).all()
+            let first = try stories[0].requireID(), second = try stories[1].requireID()
+            stories[1].videoKind = .youtube
+            stories[1].youtubeID = "dQw4w9WgXcQ"
+            try await stories[1].save(on: app.db)
+
+            let ids = [second, UUID(), first].map(\.uuidString).joined(separator: ",")
+            try await app.testing().test(.GET, "api/v1/stories?ids=\(ids)") { res async throws in
+                let items = try res.content.decode([FeedItemDTO].self)
+                #expect(items.map(\.story.id) == [second, first])
+                #expect(items.first?.story.thumbnailURL == "https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg")
+            }
+        }
+    }
+
     @Test("Rutele de admin cer token")
     func adminRequiresToken() async throws {
         try await withApp { app in

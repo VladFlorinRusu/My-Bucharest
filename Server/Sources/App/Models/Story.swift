@@ -85,6 +85,10 @@ final class Story: Model, @unchecked Sendable {
     @OptionalField(key: "story_kind")
     var kind: StoryKind?
 
+    /// Miniatura reel-ului generat (Public/thumbnails); pentru YouTube se folosește miniatura clipului.
+    @OptionalField(key: "thumbnail_url")
+    var thumbnailURL: String?
+
     @Timestamp(key: "created_at", on: .create)
     var createdAt: Date?
 

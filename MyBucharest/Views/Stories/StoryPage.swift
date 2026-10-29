@@ -16,7 +16,7 @@ struct StoryPage: View {
     @State private var isExpanded = false
     @State private var isShowingCredits = false
     @State private var isPaused = false
-    @GestureState private var isFastForwarding = false
+    @State private var isFastForwarding = false
 
     private var place: PlaceSummary { item.place }
     private var story: Story { item.story }
@@ -42,9 +42,11 @@ struct StoryPage: View {
             )
             .allowsHitTesting(false)
 
-            Color.clear
-                .contentShape(Rectangle())
-                .gesture(playbackGesture)
+            PlaybackGestureLayer {
+                withAnimation(.snappy) { isPaused.toggle() }
+            } onHoldChanged: { holding in
+                isFastForwarding = holding
+            }
 
             playbackIndicators
 
@@ -59,7 +61,10 @@ struct StoryPage: View {
         .clipped()
         .sensoryFeedback(.impact(weight: .medium), trigger: isFastForwarding) { _, holding in holding }
         .onChange(of: isActive) { _, active in
-            if !active { isPaused = false }
+            if !active {
+                isPaused = false
+                isFastForwarding = false
+            }
         }
     }
 
@@ -69,18 +74,6 @@ struct StoryPage: View {
         if meters < 10_000 { return "La \(Int(meters / 10) * 10) m de tine" }
         let km = (meters / 1_000).formatted(.number.precision(.fractionLength(1)).locale(Locale(identifier: "ro_RO")))
         return "La \(km) km de tine"
-    }
-
-    /// Atingere = pauză / redare; ținut apăsat = viteză 2× până ridici degetul.
-    private var playbackGesture: some Gesture {
-        LongPressGesture(minimumDuration: 0.3)
-            .sequenced(before: DragGesture(minimumDistance: 0))
-            .updating($isFastForwarding) { value, holding, _ in
-                if case .second(true, _) = value { holding = true }
-            }
-            .exclusively(before: TapGesture().onEnded {
-                withAnimation(.snappy) { isPaused.toggle() }
-            })
     }
 
     @ViewBuilder
@@ -129,6 +122,7 @@ struct StoryPage: View {
 
             Text(story.title)
                 .font(.title2.bold())
+                .accessibilityIdentifier("story.title")
 
             Text(story.body)
                 .font(.body)

@@ -61,6 +61,7 @@ struct Story: Codable, Identifiable, Hashable {
     var aiVoice: Bool? = nil
     var credits: [MediaCredit]? = nil
     var kind: StoryKind? = nil
+    var thumbnailURL: String? = nil
 }
 
 enum StoryKind: String, Codable, CaseIterable, Hashable {

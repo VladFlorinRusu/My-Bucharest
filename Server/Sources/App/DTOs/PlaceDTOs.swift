@@ -28,6 +28,7 @@ struct StoryDTO: Content {
     var aiVoice: Bool
     var credits: [MediaCredit]
     var kind: StoryKind
+    var thumbnailURL: String?
 }
 
 struct PlaceSummaryDTO: Content {
@@ -96,8 +97,15 @@ extension Story {
             audioURL: audioURL,
             aiVoice: aiVoice ?? false,
             credits: mediaCredits ?? [],
-            kind: kind ?? .history
+            kind: kind ?? .history,
+            thumbnailURL: thumbnailURL ?? youtubeThumbnailURL
         )
+    }
+
+    /// Miniatura publică a clipului YouTube (hqdefault există pentru orice clip).
+    private var youtubeThumbnailURL: String? {
+        guard videoKind == .youtube, let youtubeID else { return nil }
+        return "https://i.ytimg.com/vi/\(youtubeID)/hqdefault.jpg"
     }
 
     func apply(_ input: StoryInput) {

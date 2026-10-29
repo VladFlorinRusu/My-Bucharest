@@ -9,6 +9,34 @@ struct FeedItemDTO: Content {
 struct FeedController: RouteCollection {
     func boot(routes: any RoutesBuilder) throws {
         routes.get("feed", use: self.index)
+        routes.get("stories", use: self.byIDs)
+    }
+
+    struct IDsQuery: Content {
+        /// ID-uri separate prin virgulă.
+        var ids: String
+    }
+
+    /// GET /api/v1/stories?ids=<uuid>,<uuid>
+    /// Poveștile salvate de utilizator, în ordinea cerută; cele nepublicate sau șterse lipsesc.
+    @Sendable
+    func byIDs(req: Request) async throws -> [FeedItemDTO] {
+        let ids = try req.query.decode(IDsQuery.self).ids
+            .split(separator: ",")
+            .compactMap { UUID(uuidString: $0.trimmingCharacters(in: .whitespaces)) }
+            .prefix(200)
+        guard !ids.isEmpty else { return [] }
+
+        let stories = try await Story.query(on: req.db)
+            .filter(\.$id ~~ Array(ids))
+            .with(\.$place) { $0.with(\.$stories) }
+            .all()
+        let byID = Dictionary(uniqueKeysWithValues: try stories.map { (try $0.requireID(), $0) })
+
+        return try ids.compactMap { id in
+            guard let story = byID[id], story.place.status == .published else { return nil }
+            return FeedItemDTO(place: try story.place.toSummaryDTO(), story: try story.toDTO())
+        }
     }
 
     struct FeedQuery: Content {

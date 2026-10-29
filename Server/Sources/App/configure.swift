@@ -16,6 +16,7 @@ public func configure(_ app: Application) async throws {
     app.migrations.add(CreateStory())
     app.migrations.add(AddStoryMedia())
     app.migrations.add(AddStoryKind())
+    app.migrations.add(AddStoryThumbnail())
     app.migrations.add(SeedBucharestPlaces())
     app.migrations.add(CreateMediaSources())
 

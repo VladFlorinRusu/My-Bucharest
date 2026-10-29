@@ -5,5 +5,7 @@ Public/videos/*
 !Public/videos/.gitkeep
 Public/audio/*
 !Public/audio/.gitkeep
+Public/thumbnails/*
+!Public/thumbnails/.gitkeep
 # Modele Whisper (~1.6 GB)
 /models/

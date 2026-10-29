@@ -6,7 +6,7 @@ struct ProfileView: View {
     @Environment(PlacesStore.self) private var store
     @Environment(AppRouter.self) private var router
 
-    @State private var presentedSavedStory: FeedItem?
+    @State private var isShowingSaved = false
     @State private var isConfirmingReset = false
     @State private var isShowingAllDiscovered = false
 
@@ -17,21 +17,6 @@ struct ProfileView: View {
                     header
                         .listRowBackground(Color.clear)
                         .listRowInsets(EdgeInsets())
-                }
-
-                Section("Povești salvate") {
-                    if profile.savedStories.isEmpty {
-                        emptyRow("Apasă pe semnul de carte dintr-un reel ca să-l salvezi aici.")
-                    } else {
-                        ForEach(profile.savedStories) { item in
-                            Button { presentedSavedStory = item } label: {
-                                row(title: item.story.title, subtitle: item.place.name, category: item.place.category)
-                            }
-                            .buttonStyle(.plain)
-                            .accessibilityIdentifier("profile.savedStory")
-                        }
-                        .onDelete(perform: profile.removeSaved)
-                    }
                 }
 
                 ProximityRadiusSection()
@@ -79,10 +64,28 @@ struct ProfileView: View {
             ) {
                 Button("Resetează", role: .destructive) { profile.reset() }
             }
-            .fullScreenCover(item: $presentedSavedStory) { item in
-                SavedStoriesView(initialItem: item)
+            .navigationDestination(isPresented: $isShowingSaved) {
+                SavedStoriesScreen()
             }
         }
+    }
+
+    /// Primele miniaturi + „Vezi toate”, ca previzualizare a ecranului cu salvate.
+    private var savedPreviewRow: some View {
+        HStack(spacing: 8) {
+            ForEach(profile.savedStories.prefix(3)) { item in
+                StoryThumbnail(item: item, api: store.api)
+                    .frame(width: 44, height: 58)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+            }
+            Text("Vezi toate (\(profile.savedStories.count))")
+                .padding(.leading, 4)
+            Spacer()
+            Image(systemName: "chevron.right")
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(.tertiary)
+        }
+        .contentShape(Rectangle())
     }
 
     private var header: some View {
@@ -101,12 +104,15 @@ struct ProfileView: View {
                         label: "locuri descoperite",
                         systemImage: "mappin.and.ellipse"
                     )
-                    statCard(
-                        value: "\(profile.savedStories.count)",
-                        total: nil,
-                        label: "povești salvate",
-                        systemImage: "bookmark.fill"
-                    )
+                    Button { isShowingSaved = true } label: {
+                        statCard(
+                            value: "\(profile.savedStories.count)",
+                            total: nil,
+                            label: "povești salvate",
+                            systemImage: "bookmark.fill"
+                        )
+                    }
+                    .buttonStyle(.plain)
                 }
             }
         }
@@ -353,22 +359,3 @@ private struct ServerSettingsView: View {
     }
 }
 
-/// Reels din poveștile salvate, pornind de la cea aleasă.
-private struct SavedStoriesView: View {
-    let initialItem: FeedItem
-
-    @Environment(ProfileStore.self) private var profile
-    /// Lista e fixată la deschidere, ca paginile să nu dispară dacă scoți o poveste de la salvate.
-    @State private var items: [FeedItem] = []
-
-    var body: some View {
-        StoryCover {
-            if !items.isEmpty {
-                StoryFeedView(items: items, initialItemID: initialItem.id)
-            }
-        }
-        .onAppear {
-            if items.isEmpty { items = profile.savedStories }
-        }
-    }
-}
